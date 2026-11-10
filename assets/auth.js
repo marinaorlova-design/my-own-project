@@ -60,7 +60,7 @@ const HTML=`<div class="au-wrap" id="auWrap" role="dialog" aria-modal="true"><di
   <form class="au-view" data-v="login" novalidate>
     <span class="chip"><i></i>С возвращением</span>
     <h3>Вход в&nbsp;MOYO</h3><p class="sub">Анкеты, проекты и&nbsp;сделки ждут тебя в&nbsp;кабинете.</p>
-    <label class="au-f"><span>Почта</span><input type="email" name="lmail" placeholder="name@mail.ru" required autocomplete="email"></label>
+    <label class="au-f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (900) 000-00-00" required autocomplete="tel" data-phone></label>
     ${pw('lpw','Не меньше 6 символов')}
     <div class="au-line"><label class="au-ck" style="margin:0"><input type="checkbox" checked>Запомнить меня</label><a data-go="reset">Забыли пароль?</a></div>
     <button class="btn btn-p" type="submit">Войти<span class="ar">→</span></button>
@@ -71,9 +71,9 @@ const HTML=`<div class="au-wrap" id="auWrap" role="dialog" aria-modal="true"><di
 
   <form class="au-view" data-v="reset" novalidate>
     <span class="chip"><i></i>Восстановление</span>
-    <h3>Забыли пароль?</h3><p class="sub">Напиши почту, с&nbsp;которой регистрировался. Пришлём ссылку, чтобы задать новый пароль.</p>
-    <label class="au-f"><span>Почта</span><input type="email" name="rmail" placeholder="name@mail.ru" required autocomplete="email"></label>
-    <button class="btn btn-p" type="submit" style="margin-top:6px">Отправить ссылку<span class="ar">→</span></button>
+    <h3>Забыли пароль?</h3><p class="sub">Напиши телефон, на&nbsp;который регистрировался. Пришлём код в&nbsp;SMS, чтобы задать новый пароль.</p>
+    <label class="au-f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (900) 000-00-00" required autocomplete="tel" data-phone></label>
+    <button class="btn btn-p" type="submit" style="margin-top:6px">Получить код<span class="ar">→</span></button>
     <p class="au-sw"><a data-go="login">← Вернуться ко входу</a></p>
   </form>
 
@@ -81,12 +81,7 @@ const HTML=`<div class="au-wrap" id="auWrap" role="dialog" aria-modal="true"><di
     <span class="chip"><i></i>Регистрация бесплатна</span>
     <h3 data-r="t"></h3><p class="sub" data-r="s"></p>
     <div class="au-role" data-pick><button type="button" data-role="ispolnitel">Я исполнитель</button><button type="button" data-role="zakazchik">Я заказчик</button></div>
-    <div class="au-row">
-      <label class="au-f"><span>Фамилия</span><input name="last" placeholder="Иванова" required autocomplete="family-name"></label>
-      <label class="au-f"><span>Имя</span><input name="first" placeholder="Анна" required autocomplete="given-name"></label>
-    </div>
     <label class="au-f"><span>Телефон</span><input type="tel" name="phone" placeholder="+7 (900) 000-00-00" required autocomplete="tel" data-phone></label>
-    <label class="au-f"><span>Почта</span><input type="email" name="smail" placeholder="name@mail.ru" required autocomplete="email"></label>
     ${pw('spw','Придумай, не меньше 6 символов')}
     <label class="au-ck"><input type="checkbox" name="agree" required><span>Соглашаюсь с&nbsp;<a href="#">условиями платформы</a> и&nbsp;<a href="#">обработкой персональных данных</a></span></label>
     <button class="btn btn-p" type="submit" data-r="b"></button>
@@ -124,17 +119,17 @@ function init(){
   });
   addEventListener('keydown',e=>{if(e.key==='Escape'&&wrap.classList.contains('on'))close()});
   // телефон: +7 (900) 000-00-00
-  q('[data-phone]').addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'');if(d[0]==='8'||d[0]==='7')d=d.slice(1);d=d.slice(0,10);
-    let v='+7';if(d.length)v+=' ('+d.slice(0,3);if(d.length>=3)v+=')';if(d.length>3)v+=' '+d.slice(3,6);if(d.length>6)v+='-'+d.slice(6,8);if(d.length>8)v+='-'+d.slice(8,10);e.target.value=v});
+  qa('[data-phone]').forEach(inp=>inp.addEventListener('input',e=>{let d=e.target.value.replace(/\D/g,'');if(d[0]==='8'||d[0]==='7')d=d.slice(1);d=d.slice(0,10);
+    let v='+7';if(d.length)v+=' ('+d.slice(0,3);if(d.length>=3)v+=')';if(d.length>3)v+=' '+d.slice(3,6);if(d.length>6)v+='-'+d.slice(6,8);if(d.length>8)v+='-'+d.slice(8,10);e.target.value=v}));
   // проверка и «отправка»
   qa('form.au-view').forEach(f=>f.addEventListener('submit',e=>{
     e.preventDefault();let good=true;
     f.querySelectorAll('input[required]').forEach(i=>{const box=i.closest('.au-f,.au-ck');const bad=i.type==='checkbox'?!i.checked:i.name==='phone'?i.value.replace(/\D/g,'').length<11:!i.checkValidity();box.classList.toggle('bad',bad);if(bad)good=false});
     if(!good)return;
-    const v=f.dataset.v,mail=(f.querySelector('input[type=email]')||{}).value;
+    const v=f.dataset.v,tel=(f.querySelector('[data-phone]')||{}).value||'';
     if(v==='login')ok('Добро пожаловать','Переходим в&nbsp;личный кабинет…');
-    if(v==='reset')ok('Ссылка отправлена',`Проверь почту <b>${mail.replace(/</g,'')}</b>. Ссылка действует 24&nbsp;часа.`);
-    if(v==='signup')ok('Аккаунт создан',role==='zakazchik'?'Осталось подтвердить почту, и&nbsp;можно описывать первое событие.':'Осталось подтвердить почту, и&nbsp;AI начнёт собирать твою анкету.');
+    if(v==='reset')ok('Код отправлен',`Мы отправили SMS на&nbsp;<b>${tel.replace(/</g,'')}</b>. Код действует 10&nbsp;минут.`);
+    if(v==='signup')ok('Аккаунт создан',role==='zakazchik'?'Подтверди номер кодом из&nbsp;SMS, и&nbsp;можно описывать первое событие. Имя и&nbsp;детали заполнишь в&nbsp;кабинете.':'Подтверди номер кодом из&nbsp;SMS, и&nbsp;AI начнёт собирать твою анкету. Имя и&nbsp;фото добавишь в&nbsp;кабинете.');
   }));
   wrap.addEventListener('input',e=>{const b=e.target.closest('.bad');if(b)b.classList.remove('bad')});
   window.MoyoAuth={open,close};
