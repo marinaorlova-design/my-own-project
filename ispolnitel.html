@@ -6,7 +6,7 @@
 <title>MOYO для исполнителей</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=14">
+<link rel="stylesheet" href="assets/moyo.css?v=20">
 <style>
 /* совместимость со старыми блоками (кабинет, FAQ, футер, чат, модалка) */
 :root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
@@ -17,7 +17,7 @@ h1,h2,h3{font-weight:600;letter-spacing:-.04em;line-height:1.04}
 .btn-o{background:var(--glass);border:1px solid var(--line-2)}
 .btn-o:hover{border-color:rgba(255,255,255,.3)}
 .cta-row{display:flex;gap:12px}
-.sec{position:relative;padding:140px 0}
+.sec{position:relative;padding:90px 0}
 .sec-head{display:flex;flex-direction:column;gap:18px;margin-bottom:56px}
 .sec-head.c{align-items:center;text-align:center}
 main,footer{position:relative;z-index:2}
@@ -88,36 +88,13 @@ main,footer{position:relative;z-index:2}
 .hv1 .side{position:absolute;width:260px;z-index:5}
 .hv1 .side.r{left:calc(50% + 190px)}.hv1 .side.l{right:calc(50% + 190px)}
 
-/* ===== 02 STEPS: карточки вокруг столба света ===== */
-.steps{height:420vh;position:relative}
-.steps .pin{position:sticky;top:0;height:100vh;overflow:hidden}
-.col-light{position:absolute;left:50%;top:0;bottom:0;width:340px;margin-left:-170px;background:linear-gradient(90deg,transparent,rgba(138,107,255,.10) 30%,rgba(214,204,255,.30) 50%,rgba(138,107,255,.10) 70%,transparent);-webkit-mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);mask:linear-gradient(180deg,transparent,#000 18%,#000 82%,transparent);filter:blur(4px)}
-.col-core{position:absolute;left:50%;top:6%;bottom:6%;width:2px;margin-left:-1px;background:linear-gradient(180deg,transparent,rgba(230,222,255,.85),transparent);box-shadow:0 0 24px 4px var(--accent-glow)}
-.col-pool{position:absolute;left:50%;bottom:4%;width:640px;height:120px;margin-left:-320px;border-radius:50%;background:radial-gradient(closest-side,rgba(176,160,255,.35),transparent)}
-#colDust{position:absolute;inset:0;width:100%;height:100%}
-.st-title{position:absolute;left:0;right:0;top:50%;text-align:center;z-index:30;will-change:transform}
-.st-title h2{font-size:80px;letter-spacing:-.05em}
-.st-title .label{display:block;margin-bottom:18px}
-.orbit{position:absolute;inset:0;perspective:1600px}
-.ocard{position:absolute;left:50%;top:56%;width:440px;margin:-150px 0 0 -220px;padding:28px;border-radius:var(--r-l);will-change:transform,opacity}
-.ocard .top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
-.ocard .ic{width:84px;height:84px}
-.ocard h3{font-size:30px;margin-bottom:10px}
-.ocard p{font-size:15px;color:var(--text-2)}
-.ocard .chip{margin-top:18px}
-.st-cta{position:absolute;left:0;right:0;bottom:7%;display:flex;justify-content:center;z-index:31;opacity:0;transition:opacity .5s}
-.st-cta.on{opacity:1}
-.st-dots{position:absolute;left:50%;bottom:calc(7% + 74px);transform:translateX(-50%);display:flex;gap:8px;z-index:31}
-.st-dots i{width:24px;height:3px;border-radius:2px;background:rgba(255,255,255,.15);transition:background .4s}
-.st-dots i.on{background:var(--accent)}
-
 /* ===== 04 PEOPLE: диско-шар ===== */
-.people{position:relative;padding:120px 0 120px;overflow:hidden}
+.people{position:relative;padding:90px 0 0;overflow-x:clip;overflow-y:visible}
 .pp-head{display:grid;grid-template-columns:1fr 380px;align-items:end;gap:40px;margin-bottom:-20px;position:relative;z-index:3}
 .pp-head .btn{margin-top:22px}
 .pp-head h2{font-size:72px;letter-spacing:-.055em}
 .pp-head p{color:var(--text-2);font-size:17px}
-.disco{position:relative;height:860px;user-select:none}
+.disco{position:relative;height:730px;user-select:none}
 .cable{position:absolute;left:50%;top:-200px;width:1px;height:315px;background:linear-gradient(180deg,transparent,rgba(255,255,255,.5));}
 .cap{position:absolute;left:50%;top:110px;width:26px;height:16px;margin-left:-13px;border-radius:4px 4px 8px 8px;background:#2A2734;border:1px solid var(--line-2)}
 .sph-wrap{position:absolute;left:50%;top:96px;width:680px;height:680px;margin-left:-340px;perspective:1400px;cursor:grab}
@@ -263,7 +240,7 @@ main,footer{position:relative;z-index:2}
 
 
 /* ===== 06 REF ===== */
-.ref{position:relative;padding:140px 0}
+.ref{position:relative;padding:90px 0}
 .ref h2{font-size:64px;letter-spacing:-.05em}
 .r-grid{display:grid;grid-template-columns:290px 1fr 290px;gap:30px;align-items:center}
 .r-col{display:flex;flex-direction:column;gap:16px}
@@ -380,58 +357,69 @@ main,footer{position:relative;z-index:2}
 <main id="top">
 
 <!-- ============ 01 HERO ============ -->
-<section class="hero" id="hero"><div class="pin">
-
-  <div class="hv hv1">
-    <h1>Собери портфолио за&nbsp;2&nbsp;минуты.<br><span class="acc">Заказы притянутся сами</span></h1>
-    <div class="side l pop" id="v1Bonus" style="top:330px"><div class="plate glass"><div class="n acc">3&nbsp;000</div><p>бонусов за&nbsp;вступление на&nbsp;продвижение анкеты</p></div></div>
-    <div class="side l pop" id="v1P2" style="top:520px"><div class="plate glass"><span class="label">[02] Защита</span><p>Заказчик платит заранее. <b>Гонорар под&nbsp;замком</b> до&nbsp;мероприятия.</p></div></div>
-    <div class="side r pop" id="v1P1" style="top:330px"><div class="plate glass"><span class="label">[01] AI-анкета</span><p>Ответь на&nbsp;5&nbsp;вопросов. <b>AI соберёт портфолио</b> с&nbsp;фото, услугами и&nbsp;ценами.</p></div></div>
-    <div class="side r pop" id="v1Inv" style="top:560px"><div class="h-toast glass"><div class="av">✦</div><div><b>Новое приглашение</b><small>Корпоратив · 26 декабря · 60&nbsp;000&nbsp;₽</small></div></div></div>
-    <div class="slot" id="slot">
-      <div class="slot-ghost" id="ghost"></div>
-      <div class="burst"></div>
-      <svg class="hcur" id="hcur" viewBox="0 0 24 24"><path d="M4 2l16 9-7 2-3 7L4 2z" fill="#fff" stroke="#0B0A10" stroke-width="1.2" stroke-linejoin="round"/></svg>
-    </div>
+<section class="hero hx" id="hero"><div class="pin">
+  <div class="hx-bg"><div class="hx-box" data-ratio="1.7778">
+    <img class="ph" id="hxImg" src="assets/img/hero-phone.jpg" alt="Артист держит телефон у сцены">
+    <div class="ph-glow"></div>
+    <div class="ph-scr"><div class="ph-in" id="phIn">
+      <div class="ph-bar"><span>9:41</span><span>●●● ▮</span></div>
+      <div class="ph-app"><img src="assets/logo.svg" alt="MOYO"><i></i></div>
+      <div class="ph-push" id="phPush"></div>
+      <div class="ph-view">
+        <div class="ph-prog"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="ph-step" id="phStep">Вопрос 1 из 5</div>
+        <div class="ph-q" id="phQ"></div>
+        <div class="ph-opts" id="phOpts"></div>
+        <div class="ph-photo" id="phPhoto" style="background-image:url(assets/img/r13.jpg)"></div>
+      </div>
+      <div class="ph-view"><div class="ph-ai"><i></i>AI собирает анкету…</div></div>
+      <div class="ph-view">
+        <div class="ph-card"><div class="im" style="background-image:url(assets/img/r13.jpg)"></div><div class="tx"><b>Алина Север <span class="acc">✓</span></b><small>Вокал · Ведущая · Москва</small><div class="tg"><span>Свадьбы</span><span>Корпоративы</span><span>Джаз</span></div><div class="pr">от&nbsp;40&nbsp;000&nbsp;₽<em>Пригласить</em></div></div></div>
+        <div class="ph-pub">✓ Анкета опубликована</div>
+      </div>
+    </div></div>
+    <div class="ph-stack" id="phStack"></div>
+  </div></div>
+  <div class="hx-l">
+    <h1>Портфолио за&nbsp;2&nbsp;минуты.<br><span class="acc">Заказы придут сами</span></h1>
+    <p class="sub">Ответь на&nbsp;<b>5&nbsp;вопросов</b>, и&nbsp;AI соберёт анкету с&nbsp;фото, услугами и&nbsp;ценами. Приглашения и&nbsp;оплата придут в&nbsp;телефон.</p>
     <div class="h-cta"><a href="#final" data-auth="signup" class="btn btn-p">Создать анкету бесплатно<span class="ar">→</span></a><a href="#steps" class="btn btn-g">Как это работает</a></div>
   </div>
-
 </div></section>
 
 <!-- ============ 02 STEPS ============ -->
-<section class="steps" id="steps">
+<section class="rgs" id="steps">
   <div class="pin">
-    <div class="col-light"></div><div class="col-pool"></div><canvas id="colDust"></canvas><div class="col-core"></div>
-    <div class="st-title" id="stTitle"><span class="label">[03] Путь исполнителя</span><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2></div>
-    <div class="orbit" id="orbit">
-      <div class="ocard glass"><div class="top"><div class="ic" data-ill="iconProfile"></div><span class="label">01 / 03 · 2 минуты</span></div><h3>Собери анкету</h3><p>Ответь на&nbsp;5&nbsp;вопросов. AI напишет описание, подберёт категории и&nbsp;оформит портфолио.</p><span class="chip"><i></i>Анкета опубликована</span></div>
-      <div class="ocard glass"><div class="top"><div class="ic" data-ill="iconInvite"></div><span class="label">02 / 03 · Заказы</span></div><h3>Получай приглашения</h3><p>Организаторы находят тебя через AI-поиск. А&nbsp;ещё ты&nbsp;сам откликаешься на&nbsp;вакансии.</p><span class="chip"><i></i>Свадьба, 14&nbsp;июня</span></div>
-      <div class="ocard glass"><div class="top"><div class="ic" data-ill="iconMoney"></div><span class="label">03 / 03 · Деньги</span></div><h3>Зарабатывай</h3><p>Заказчик вносит гонорар заранее, платформа хранит его до&nbsp;мероприятия. Отработал&nbsp;— получил.</p><span class="chip"><i></i>+&nbsp;45&nbsp;000&nbsp;₽</span></div>
-    </div>
-    <div class="st-dots" id="stDots"><i></i><i></i><i></i></div>
-    <div class="st-cta" id="stCta"><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div>
+    <div class="rgs-title"><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2></div>
+    <div class="rgs-stage"><div class="rg">
+      <div class="rk w step"><div class="rk-h"><span>Шаг 1</span><i>из&nbsp;3</i></div><div class="n">01</div><div class="t">Собери анкету</div><p>Ответь на&nbsp;5 вопросов. AI оформит портфолио с&nbsp;фото, услугами и&nbsp;ценами</p></div>
+      <div class="rk dot"><div class="rk-h"><span>AI-анкета</span><i>время</i></div><div data-bars="2,3,3,4,4,5,6,6,7,8,8,9,10,11"></div><div class="foot"><div data-led="2"></div><small>минуты на&nbsp;анкету. Без дизайнера и&nbsp;копирайтера</small></div></div>
+      <div class="rk w step"><div class="rk-h"><span>Шаг 2</span><i>из&nbsp;3</i></div><div class="n">02</div><div class="t">Получай заказы</div><p>Заказчики находят тебя через AI-поиск, а&nbsp;ты&nbsp;откликаешься на&nbsp;вакансии</p></div>
+      <div class="rk w step"><div class="rk-h"><span>Шаг 3</span><i>из&nbsp;3</i></div><div class="n">03</div><div class="t">Получай оплату</div><p>Заказчик платит заранее. Отработал&nbsp;— получил</p></div>
+      <div class="rk d don"><div class="rk-h"><span>Гарантия</span></div><div data-ring="100" data-sub="оплаты"></div><p class="tx2">Оплата по&nbsp;договору. <span>Без просьб о&nbsp;предоплате.</span></p></div>
+    </div></div>
+    <div class="rgs-hint">Потяни, чтобы покрутить&nbsp;↔</div>
+    <div class="rgs-cta"><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div>
   </div>
 </section>
 
 <!-- ============ 03 DEAL: текстовая перебивка ============ -->
-<section class="tx" id="deal" data-bg="v" style="height:545vh">
+<section class="tx" id="deal" data-bg="v" style="height:450vh">
   <div class="pin">
-    <div class="tx-top wrap"><span class="label"><i></i>Безопасная сделка</span><span class="label tx-n"><b>01</b> / 05</span></div>
     <div class="tx-stage">
-    <h2 class="tx-f">Гонорар <em>под&nbsp;замком</em><br>ещё до&nbsp;работы</h2>
+    <h2 class="tx-f">Безопасная <em>сделка</em></h2>
     <h2 class="tx-f">Условия фиксируются<br>в&nbsp;<em>договоре</em></h2>
     <h2 class="tx-f">Заказчик вносит<br>оплату <em>заранее</em></h2>
-    <h2 class="tx-f">Деньги <em>под&nbsp;защитой</em><br>до&nbsp;события</h2>
     <h2 class="tx-f">Отработал&nbsp;—<br>гонорар <em>у&nbsp;тебя</em></h2>
     </div>
-    <div class="tx-bar"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
+    <div class="tx-bar"><i><b></b></i><i><b></b></i><i><b></b></i><i><b></b></i></div>
     <div class="tx-cta"><a href="#final" data-auth="signup" class="btn btn-m">Работать под&nbsp;защитой<span class="ar">→</span></a></div>
   </div>
 </section>
 
 <!-- ============ 04 PEOPLE ============ -->
 <section class="people" id="people"><div class="wrap flow-in">
-  <div class="pp-head"><div><span class="label">[05] Участники</span><h2 style="margin-top:18px">Более <span class="acc">200</span><br>участников уже здесь</h2></div><div><p>Ведущие, вокалисты, диджеи, шоу и&nbsp;коллективы. Нажми на&nbsp;любую анкету, чтобы открыть портфолио.</p><a href="#final" data-auth="signup" class="btn btn-p">Создать анкету<span class="ar">→</span></a></div></div>
+  <div class="pp-head"><div><h2 style="margin-top:18px">Более <span class="acc">200</span><br>участников уже здесь</h2></div><div><p>Ведущие, вокалисты, диджеи, шоу и&nbsp;коллективы. Нажми на&nbsp;любую анкету, чтобы открыть портфолио.</p><a href="#final" data-auth="signup" class="btn btn-p">Создать анкету<span class="ar">→</span></a></div></div>
   <div class="disco" id="disco">
     <div class="sph-glow"></div><div class="cable"></div><div class="cap"></div>
     <div class="sph-wrap" id="sphWrap"><div class="sph" id="sph"></div></div>
@@ -442,7 +430,7 @@ main,footer{position:relative;z-index:2}
 <!-- ============ 05 INSIDE ============ -->
 <section class="cab" id="inside" data-bg="v" style="height:560vh">
   <div class="pin">
-    <div class="cab-head" id="cabHead"><span class="label">[06] Как устроена работа</span><h2>Удобный личный кабинет.<br><span class="acc">Всё собрано в&nbsp;одном месте</span></h2></div>
+    <div class="cab-head" id="cabHead"><h2>Удобный личный кабинет.<br><span class="acc">Всё собрано в&nbsp;одном месте</span></h2></div>
     <div class="cab-stage" id="cabStage">
       <div class="cc"><div class="cc-in">
         <div class="cc-back"><img src="assets/logo.svg" alt=""><span class="n">01</span><b>Вакансии и&nbsp;отклики</b></div>
@@ -482,8 +470,8 @@ main,footer{position:relative;z-index:2}
               </div>
               <div class="upc">
                 <div class="lbl">Ближайшие</div>
-                <div><b>19 дек · Открытие ресторана</b>35 000 ₽<br><small>● оплата под замком</small></div>
-                <div><b>26 дек · Корпоратив IT</b>60 000 ₽<br><small>● оплата под замком</small></div>
+                <div><b>19 дек · Открытие ресторана</b>35 000 ₽<br><small>● оплата у&nbsp;платформы</small></div>
+                <div><b>26 дек · Корпоратив IT</b>60 000 ₽<br><small>● оплата у&nbsp;платформы</small></div>
                 <div><b>31 дек · Новогодняя ночь</b>90 000 ₽<br><small>● договор подписан</small></div>
               </div>
             </div>
@@ -514,7 +502,7 @@ main,footer{position:relative;z-index:2}
 
 <!-- ============ 06 REFERRAL ============ -->
 <section class="ref" id="ref"><div class="wrap flow-in">
-  <div class="sec-head c"><span class="label">[07] Бонусы</span><h2>Зови своих.<br><span class="acc">Зарабатывай</span> на&nbsp;их сделках</h2></div>
+  <div class="sec-head c"><h2>Зови своих.<br><span class="acc">Зарабатывай</span> на&nbsp;их сделках</h2></div>
   <div class="r-grid">
     <div class="r-col">
       <div class="rc glass"><span class="label">Навсегда</span><div class="v acc">50%</div><p>от&nbsp;комиссии платформы с&nbsp;каждой сделки приглашённых коллег</p></div>
@@ -523,17 +511,44 @@ main,footer{position:relative;z-index:2}
     <div class="net" id="net"><svg id="netSvg"></svg><div class="core"><div><b>Ты</b><small>твоя сеть</small></div></div></div>
     <div class="r-col">
       <div class="rc glass"><span class="label">За&nbsp;каждого</span><div class="v">+&nbsp;бонус</div><p>за&nbsp;каждого коллегу, который зарегистрировался по&nbsp;твоей ссылке</p></div>
-      <div class="rc glass link"><span class="label">Твоя ссылка</span><div class="fld">moyo.events/r/alina<button type="button" id="copyBtn">Копировать</button></div><p>Отправь коллегам&nbsp;— ведущим, диджеям, музыкантам</p></div>
+      <div class="rc glass"><span class="label">Без&nbsp;лимита</span><div class="v">∞</div><p>приглашай сколько хочешь&nbsp;— доход идёт с&nbsp;каждой сделки каждого коллеги</p></div>
     </div>
   </div>
   <div class="cta-row"><a href="#final" data-auth="signup" class="btn btn-p">Получить свою ссылку<span class="ar">→</span></a></div>
 </div></section>
 
+<!-- ============ ОТЗЫВЫ ============ -->
+<section class="rev" id="reviews" data-bg="v"><div class="wrap flow-in">
+  <h2>Что говорят<br><span class="acc">о&nbsp;MOYO</span></h2>
+  <div class="rev-grid">
+    <div class="rv glass"><span class="st">★★★★★</span><q>Собрала анкету в&nbsp;метро между двумя выступлениями. Через неделю пришло первое приглашение на&nbsp;свадьбу.</q><div class="who"><span class="ini">К</span><div><b>Ксения</b><small>вокалистка, Москва</small></div></div></div>
+    <div class="rv glass"><span class="st">★★★★★</span><q>Больше не&nbsp;прошу предоплату в&nbsp;личке: деньги уже у&nbsp;платформы, и&nbsp;заказчик спокоен, и&nbsp;я.</q><div class="who"><span class="ini">А</span><div><b>Артём</b><small>ведущий, Санкт-Петербург</small></div></div></div>
+    <div class="rv glass"><span class="st">★★★★★</span><q>Календарь и&nbsp;чат проекта в&nbsp;одном месте. Перестал терять договорённости в&nbsp;мессенджерах.</q><div class="who"><span class="ini">В</span><div><b>Влад</b><small>диджей, Москва</small></div></div></div>
+  </div>
+</div></section>
+
+<!-- ============ О НАС ============ -->
+<section class="about" id="about"><div class="wrap flow-in">
+  <div class="ab-grid">
+    <div class="ab-ph"><img src="assets/img/team.jpg" alt="Команда MOYO" loading="lazy"><span class="tag">Команда MOYO</span></div>
+    <div class="ab-tx">
+      <h2>Команда MOYO.<br><span class="acc">Делаем ивент проще</span></h2>
+      <p class="lead">Мы собрали в&nbsp;одном месте всё, что нужно артисту: анкету, заказы, договор и&nbsp;безопасную оплату. Чтобы ты&nbsp;больше выступал и&nbsp;меньше переписывался в&nbsp;мессенджерах.</p>
+      <div class="ab-num">
+        <div><b>Сколково</b><small>резидент инновационного центра</small></div>
+        <div><b>2 мин</b><small>на&nbsp;анкету с&nbsp;AI</small></div>
+        <div><b>100%</b><small>гарантия оплаты</small></div>
+        <div><b>МСК · СПБ</b><small>работаем в&nbsp;двух столицах</small></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+
 <!-- ============ 07 FAQ ============ -->
 <section class="faq sec" id="faq" data-bg="v">
   <div class="wrap flow-in">
     <div style="position:relative">
-      <span class="label">[08] Вопросы</span>
       <h2 data-r="2">Коротко о&nbsp;главном</h2>
       <p class="lead" data-r="3" style="font-size:17px">Не нашёл ответ? Напиши менеджеру, он ответит в&nbsp;течение часа в&nbsp;рабочее время.</p>
       <button class="btn btn-o" data-r="4" style="margin-top:30px" onclick="openChat()">Написать менеджеру</button>
@@ -552,16 +567,19 @@ main,footer{position:relative;z-index:2}
 
 
 <!-- ============ 08 FINAL ============ -->
-<section class="final" id="final">
-  <div class="truss"></div>
-  <div class="fbeam b1"></div><div class="fbeam b2"></div><div class="fbeam b3"></div>
-  <div class="stage"></div>
-  <svg class="mic" viewBox="0 0 110 300" fill="none"><ellipse cx="55" cy="292" rx="34" ry="6" fill="#1A1820" stroke="rgba(255,255,255,.6)"/><path d="M55 290V110L82 60" stroke="rgba(255,255,255,.85)" stroke-width="2" stroke-linecap="round"/><g transform="rotate(30 86 48)"><rect x="77" y="22" width="18" height="34" rx="9" fill="#8A6BFF" stroke="#fff" stroke-width="1.4"/><path d="M79 32h14M79 38h14M79 44h14" stroke="#fff" stroke-opacity=".5"/></g></svg>
-  <div class="in flow-in" data-keep="1">
-    <span class="label">[09] Твой ход</span>
-    <h2>Сцена готова.<br><span class="acc">Не&nbsp;хватает тебя</span></h2>
-    <p class="lead">Создай анкету за&nbsp;2&nbsp;минуты, получи 3&nbsp;000 бонусов и&nbsp;первые приглашения.</p>
-    <div class="cta-row"><a href="#" data-auth="signup" class="btn btn-m">Создать анкету бесплатно<span class="ar">→</span></a><button class="btn btn-g" onclick="openChat()">Задать вопрос менеджеру</button></div>
+<section class="fin" id="final">
+  <div class="pin">
+    <div class="fin-stage"></div>
+    <div class="fin-spots"></div>
+    <div class="fin-ball"><img src="assets/img/disco-ball.jpg" alt=""></div>
+    <img class="fin-mic" src="assets/img/mic.jpg" alt="">
+    <div class="fin-in">
+      <h2>Сцена готова.<br><span class="acc">Не&nbsp;хватает тебя</span></h2>
+      <p class="lead">Создай анкету за&nbsp;2&nbsp;минуты и&nbsp;получи 3&nbsp;000 бонусов на&nbsp;старт.</p>
+      <div class="cta-row"><a href="#" data-auth="signup" class="btn btn-m">Создать анкету бесплатно<span class="ar">→</span></a><button class="btn btn-g" onclick="openChat()">Задать вопрос менеджеру</button></div>
+    </div>
+    <div class="cur l"><div></div></div><div class="cur r"><div></div></div>
+    <div class="fin-hint">Листай, занавес откроется ↓</div>
   </div>
 </section>
 </main>
@@ -570,15 +588,15 @@ main,footer{position:relative;z-index:2}
 <footer class="ft">
   <div class="wrap">
     <div class="ft-top">
-      <div><span class="label">MOYO · Entertainment Industry Alliance</span><h3>Остались вопросы?<br><span class="acc">Менеджер ответит за&nbsp;5&nbsp;минут</span></h3></div>
+      <div><h3>Остались вопросы?<br><span class="acc">Менеджер ответит за&nbsp;5&nbsp;минут</span></h3></div>
       <div class="ft-act"><a href="#" data-auth="signup" class="btn btn-p">Создать анкету<span class="ar">→</span></a><button class="btn btn-g" onclick="openChat()">Написать менеджеру</button></div>
     </div>
     <div class="ft-cols">
       <div class="ft-clock"><h5>Москва · сейчас</h5><div class="t" id="ftClock">12<i>:</i>00</div><span class="st"><i></i>Менеджер на&nbsp;связи 9:00–18:00</span></div>
       <div><h5>Исполнителям</h5><ul><li><a href="#steps">Как это работает</a></li><li><a href="#deal">Безопасная сделка</a></li><li><a href="#inside">Личный кабинет</a></li><li><a href="#ref">Бонусы</a></li></ul></div>
-      <div><h5>Платформа</h5><ul><li><a href="zakazchik.html">Заказчикам</a></li><li><a href="#people">Участники</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#" data-auth="login">Войти</a></li></ul></div>
+      <div><h5>Платформа</h5><ul><li><a href="zakazchik.html">Заказчикам</a></li><li><a href="#people">Участники</a></li><li><a href="#about">О&nbsp;нас</a></li><li><a href="#faq">Вопросы</a></li><li><a href="#" data-auth="login">Войти</a></li></ul></div>
       <!-- ЗАГЛУШКА: заменить на реальные контакты -->
-      <div><h5>Связаться</h5><ul><li><a href="#">Telegram: @moyo_support</a></li><li><a href="#">hello@moyo.events</a></li><li>Резидент Сколково</li><li class="ft-note">Контакты — заглушки</li></ul></div>
+      <div><h5>Связаться</h5><ul><li><a href="#">Telegram: @moyo_support</a></li><li><a href="#">hello@moyo.events</a></li><li>Резидент Сколково</li></ul></div>
     </div>
     <div class="ft-mark" id="ftMark"><img src="assets/logo.svg" alt="MOYO"><div class="ft-pupil" id="ftPupil"></div></div>
     <div class="ft-bot"><span>© MOYO, 2024–2026</span><span><a href="#">Политика конфиденциальности</a> · <a href="#">Пользовательское соглашение</a></span><a href="#top" class="ft-up" onclick="scrollTo({top:0,behavior:'smooth'});return false">Наверх ↑</a></div>
@@ -587,10 +605,10 @@ main,footer{position:relative;z-index:2}
 
 <!-- ============ HELPER WIDGET ============ -->
 <!-- ЗАГЛУШКА: фото и имя менеджера заменить на реальные -->
-<div class="hbub" id="hbub"><button class="x" aria-label="Закрыть">×</button><b>Анна, менеджер MOYO</b>Привет! Помогу собрать анкету и&nbsp;отвечу на&nbsp;любой вопрос. Пиши, я&nbsp;онлайн 👋</div>
-<button class="help" id="help"><span class="mph" id="mgrPh"></span><span class="ring"></span><span class="dot-on"></span><span>Задать вопрос менеджеру<small>Анна · онлайн, ответит за 5 минут</small></span></button>
+<div class="hbub" id="hbub"><button class="x" aria-label="Закрыть">×</button><b>Анастасия, менеджер MOYO</b>Привет! Помогу собрать анкету и&nbsp;отвечу на&nbsp;любой вопрос. Пиши, я&nbsp;онлайн 👋</div>
+<button class="help" id="help"><span class="mph" id="mgrPh"></span><span class="ring"></span><span class="dot-on"></span><span>Задать вопрос менеджеру<small>Анастасия · онлайн, ответит за 5 минут</small></span></button>
 <div class="chatbox" id="chatbox">
-  <div class="cb-h"><div class="av" id="mgrPh2" style="overflow:hidden"></div><div><b>Анна, менеджер MOYO</b><small>Отвечаем в течение часа · 9:00–18:00 МСК</small></div><button class="x" onclick="closeChat()">×</button></div>
+  <div class="cb-h"><div class="av" id="mgrPh2" style="overflow:hidden"></div><div><b>Анастасия, менеджер MOYO</b><small>Отвечаем в течение часа · 9:00–18:00 МСК</small></div><button class="x" onclick="closeChat()">×</button></div>
   <div class="cb-b" id="cbb">
     <div class="m">Привет! Я менеджер MOYO. Помогу с анкетой, оплатой или бонусами. Что подсказать?</div>
     <div class="qq"><button>Как создать анкету?</button><button>Как работает оплата?</button><button>Как получить 3 000 бонусов?</button></div>
@@ -613,17 +631,17 @@ main,footer{position:relative;z-index:2}
       <div class="pc-tags" id="mTags"></div>
       <div class="srv" id="mSrv"></div>
       <div class="cta-row" style="margin-top:6px"><a href="#final" data-auth="signup" class="btn btn-p btn-s" onclick="closeModal()">Хочу такую же анкету</a></div>
-      <div class="note">Фото и данные — заглушки прототипа</div>
+      
     </div>
   </div>
 </div>
 
 
 
-<script src="assets/field.js?v=14"></script>
-<script src="assets/auth.js?v=14"></script>
-<script src="assets/scrollfx.js?v=14"></script>
-<script src="assets/illus.js?v=14"></script>
+<script src="assets/field.js?v=20"></script>
+<script src="assets/auth.js?v=20"></script>
+<script src="assets/scrollfx.js?v=20"></script>
+<script src="assets/illus.js?v=20"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -642,12 +660,20 @@ const SIL={
   band:`<ellipse cx="56" cy="120" rx="20" ry="23"/><path d="M14 262C18 210 34 158 56 156C78 158 94 210 98 262Z"/><ellipse cx="144" cy="120" rx="20" ry="23"/><path d="M102 262C106 210 122 158 144 156C166 158 182 210 186 262Z"/><ellipse cx="100" cy="100" rx="24" ry="28"/><path d="M50 262C56 196 76 150 100 148C124 150 144 196 150 262Z"/>`
 };
 let pid=0;
-function photo(h1,h2,kind){
+const PH={'Алина Север':'r13','DJ Nova':'r19','Марк Ветров':'r15','Spark Crew':'r21','Ева Ли':'r18','Макс Спарк':'r24','Илья Громов':'r17','Ника Рэй':'r23','Jazz Ritm':'r16','Олег Март':'r20','Лев Мирон':'r22','Даня Бит':'r14','DJ Sora':'r14','Лера Шторм':'r23','Кавер-бэнд «Ритм»':'r16'};
+const phSrc=n=>PH[n]?`assets/img/${PH[n]}.jpg`:'';
+function photo(h1,h2,kind,name){
+  if(phSrc(name))return `<img src="${phSrc(name)}" alt="${name}" loading="lazy" style="width:100%;height:100%;object-fit:cover;display:block">`;
   const i=++pid,l=18+(i*7)%12;
   return `<svg viewBox="0 0 200 260" preserveAspectRatio="xMidYMin slice"><defs><linearGradient id="pa${i}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="hsl(256 14% ${l+12}%)"/><stop offset="1" stop-color="hsl(256 16% ${l-6}%)"/></linearGradient></defs>
   <rect width="200" height="260" fill="url(#pa${i})"/><g fill="hsl(256 14% ${l+20}%)" stroke="rgba(255,255,255,.18)" stroke-width="1.2">${SIL[kind]||SIL.sing}</g></svg>`;
 }
 const tileBg=i=>{const l=22+(i*11)%16;return `radial-gradient(circle at 50% 36%,hsl(256 14% ${l+16}%) 0 17%,transparent 18%),radial-gradient(ellipse 40% 30% at 50% 100%,hsl(256 14% ${l+14}%) 0 96%,transparent 100%),linear-gradient(160deg,hsl(256 14% ${l+6}%),hsl(256 16% ${l-8}%))`};
+
+
+/* первый экран: коробка с фото покрывает экран, сохраняя пропорции снимка */
+function fitHx(){document.querySelectorAll('.hx-box').forEach(b=>{const r=+b.dataset.ratio,W=b.parentElement.clientWidth,H=b.parentElement.clientHeight;let w=W,h=W/r;if(h<H){h=H;w=H*r}b.style.width=w+'px';b.style.height=h+'px'})}
+fitHx();addEventListener('resize',fitHx);
 
 /* ---------- сквозной фон ---------- */
 const bg=MoyoField($('#bgfx'));
@@ -656,86 +682,52 @@ const bg=MoyoField($('#bgfx'));
 const hdr=$('#hdr');
 
 /* =========================================================
-   01 HERO — при открытии курсор по одной подносит части анкеты
+   01 HERO — телефон артиста: 5 вопросов → AI собирает анкету →
+   приходят пуши, вылетают из телефона в стопку, телефон вибрирует
+   и сцена за ним загорается. Проигрывается один раз при открытии.
    ========================================================= */
-const cardHTML=()=>`<div class="sc"><div class="sc-ph">${photo(0,0,'sing')}</div><div class="sc-nm"><b>Алина Север <span class="acc">✓</span></b><small>Вокал · Ведущая · Москва</small></div><div class="sc-tg"><span class="tag">Свадьбы</span><span class="tag">Корпоративы</span><span class="tag">Джаз</span></div><div class="sc-pr"><b>от&nbsp;40&nbsp;000&nbsp;₽</b><span class="btn btn-p btn-s">Пригласить</span></div></div>`;
 function updHero(){}
-{
-  // анкета режется на 4 части; курсор по скроллу подносит их по одной
-  const SL=[[0,244,'Фото'],[244,302,'Имя'],[302,342,'Услуги'],[342,400,'Цена']];
-  // части ждут по бокам: фото и услуги слева, имя и цена справа
-  const START=[[-620,-40,-8],[620,-120,7],[-620,150,6],[600,-30,-6]];
-  const slot=$('#slot'),cur=$('#hcur'),ghost=$('#ghost');
-  ghost.innerHTML=SL.map(([a,b,n])=>`<i style="top:${a}px;height:${b-a}px">${n}</i>`).join('');
-  const ghosts=$$('#ghost i');
-  const parts=SL.map(([a,b],i)=>{
-    const el=document.createElement('div');el.className='part';el.innerHTML=cardHTML();
-    const r1=a?0:22,r2=b<400?0:22;
-    el.firstChild.style.clipPath=`inset(${a}px 0 ${400-b}px 0 round ${r1}px ${r1}px ${r2}px ${r2}px)`;
-    slot.insertBefore(el,cur);return el;
-  });
-  const flashes=SL.map(([a,b])=>{const f=document.createElement('div');f.className='pflash';f.style.cssText=`top:${a}px;height:${b-a}px;border-radius:${a?0:22}px ${a?0:22}px ${b<400?0:22}px ${b<400?0:22}px`;slot.insertBefore(f,cur);return f});
-  const mid=i=>(SL[i][0]+SL[i][1])/2,C0=[420,330],done=[0,0,0,0];
-  let fin=false;const T0=performance.now()+(REDUCE?-1e5:400);
-  (function frame(now){
-    const p=clamp((now-T0)/4300,0,1),t=now/1000;
-    let cx=C0[0]+Math.sin(t*1.5)*6,cy=C0[1]+Math.cos(t*1.2)*5,press=false;
-    parts.forEach((el,i)=>{
-      const a=.05+i*.2,u=clamp((p-a)/.18,0,1),[sx,sy,sr]=START[i];
-      const m=u<.3?0:ease((u-.3)/.7),fl=(1-m)*Math.sin(t*1.1+i*1.7)*6;
-      el.style.transform=`translate(${sx*(1-m)}px,${sy*(1-m)+fl}px) rotate(${sr*(1-m)}deg)`;
-      const isIn=u>=1?1:0;
-      if(isIn!==done[i]){done[i]=isIn;ghosts[i].classList.toggle('off',!!isIn);if(isIn){flashes[i].classList.remove('on');void flashes[i].offsetWidth;flashes[i].classList.add('on')}}
-      if(p>=a&&u<1){
-        const pr=i?[150,mid(i-1)]:C0,g=[150+sx,mid(i)+sy+fl];
-        if(u<.3){const k=ease(u/.3);cx=pr[0]+(g[0]-pr[0])*k;cy=pr[1]+(g[1]-pr[1])*k}
-        else{cx=150+sx*(1-m);cy=mid(i)+sy*(1-m)+fl;press=true}
-      }else if(u>=1){cx=150;cy=mid(i)}
-    });
-    // собрано: курсор уходит, анкета «публикуется», приходит приглашение
-    const e=clamp((p-.84)/.06,0,1);
-    if(e>0){cx=150+e*320;cy=mid(3)+e*160}
-    cur.style.transform=`translate(${cx-4}px,${cy-2}px) scale(${press?.84:1})`;cur.style.opacity=1-e;
-    const f=p>.86;if(f!==fin){fin=f;if(f){slot.classList.remove('pub');void slot.offsetWidth;slot.classList.add('pub')}}
-    $('#v1P1').classList.toggle('on',f);
-    $('#v1P2').classList.toggle('on',f);$('#v1Bonus').classList.toggle('on',f);$('#v1Inv').classList.toggle('on',p>.9);
-    if(p<1||now-T0<5600)requestAnimationFrame(frame);
-  })(performance.now());
-}
-
-/* =========================================================
-   02 STEPS — стеклянные карточки вращаются вокруг столба света
-   ========================================================= */
-$$('[data-ill]').forEach(el=>el.insertAdjacentHTML('afterbegin',ILL[el.dataset.ill]()));
-const stSec=$('#steps'),ocards=$$('.ocard'),stTitle=$('#stTitle'),stDots=$$('#stDots i');
-function updSteps(){
-  const p=prog(stSec);
-  // 0–.14: заголовок один по центру (пауза), затем уезжает вверх
-  const tt=ease(clamp((p-.1)/.12,0,1));
-  stTitle.style.transform=`translateY(calc(-50% - ${tt*(innerHeight*.5-110)}px)) scale(${1-tt*.42})`;
-  const show=clamp((p-.14)/.08,0,1);
-  // карточек может быть 3 или 4: шаг поворота 360/N
-  const N=ocards.length,A=360/N,s=clamp((p-.22)/.68,0,1)*(N-1),k=Math.floor(s),f=s-k;
-  const rot=A*(Math.min(N-1,k)+(k>=N-1?0:ease(clamp((f-.25)/.5,0,1))));
-  ocards.forEach((c,i)=>{
-    const a=(i*A-rot+(1-show)*A/2)*Math.PI/180,x=Math.sin(a)*400,z=Math.cos(a),d=(z+1)/2;
-    c.style.transform=`translateX(${x}px) translateZ(${z*120}px) rotateY(${-Math.sin(a)*28}deg) scale(${.66+.34*d})`;
-    c.style.opacity=(.18+.82*Math.pow(d,1.6))*show;c.style.zIndex=Math.round(d*20);
-  });
-  const front=Math.round(rot/A)%N;stDots.forEach((d,i)=>d.classList.toggle('on',show>0&&i===front));
-  $('#stCta').classList.toggle('on',p>.86);
-}
-// частицы в столбе света
 (()=>{
-  const cv=$('#colDust'),ctx=cv.getContext('2d');let W,H,P=[];
-  const size=()=>{W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;P=Array.from({length:110},()=>({x:W/2+(Math.random()+Math.random()+Math.random()-1.5)*90,y:Math.random()*H,v:.2+Math.random()*.6,r:Math.random()*1.4+.3,t:Math.random()*6}))};
-  size();addEventListener('resize',size);
-  (function t(){ctx.clearRect(0,0,W,H);
-    P.forEach(p=>{p.y-=p.v;p.t+=.03;if(p.y<0){p.y=H;p.x=W/2+(Math.random()+Math.random()+Math.random()-1.5)*90}
-      const fade=Math.min(1,p.y/(H*.2),(H-p.y)/(H*.2));ctx.globalAlpha=(.35+.65*Math.abs(Math.sin(p.t)))*fade;
-      ctx.fillStyle=p.r>1.2?'#D6CCFF':'#fff';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);ctx.fill()});
-    requestAnimationFrame(t)})();
+  const box=$('#hero .hx-box'),scr=$('#phIn'),hero=$('#hero'),img=$('#hxImg');
+  // интерфейс нарисован на 310 px ширины — подгоняем под экран на фото
+  const fitPh=()=>{const w=$('.ph-scr').clientWidth;scr.style.transform=`scale(${w/310})`};
+  fitPh();addEventListener('resize',fitPh);
+  const Q=[['Кто ты?',['Вокалистка','Ведущий','Диджей','Шоу'],0],['Где выступаешь?',['Москва','Санкт-Петербург','Выезд'],0],['Какие форматы?',['Свадьбы','Корпоративы','Частные'],1],['Сколько стоит выступление?',['до 30 000 ₽','от 40 000 ₽','от 80 000 ₽'],1],['Добавь фото',[],-1]];
+  const PUSH=[['✦','Новое приглашение','Свадьба · 14 июня · 45 000 ₽'],['🔒','Заказчик внёс оплату','45 000 ₽ ждут тебя у платформы'],['＋','3 000 бонусов','на продвижение анкеты']];
+  const views=$$('#phIn .ph-view'),prog=$$('#phIn .ph-prog i'),q=$('#phQ'),st=$('#phStep'),opts=$('#phOpts'),ph=$('#phPhoto'),push=$('#phPush'),stack=$('#phStack');
+  const sleep=ms=>new Promise(r=>setTimeout(r,REDUCE?0:ms));
+  const view=i=>views.forEach((v,k)=>v.classList.toggle('on',k===i));
+  img.style.filter='brightness(.72)';
+  (async()=>{
+    await sleep(500);view(0);
+    for(let i=0;i<Q.length;i++){
+      const [t,o,sel]=Q[i];
+      st.textContent=`Вопрос ${i+1} из 5`;q.textContent=t;
+      opts.innerHTML=o.map(x=>`<span>${x}</span>`).join('');ph.classList.remove('on');
+      await sleep(380);
+      if(sel>=0)opts.children[sel].classList.add('on');else ph.classList.add('on');
+      prog.forEach((p,k)=>p.classList.toggle('on',k<=i));
+      await sleep(420);
+    }
+    view(1);await sleep(900);
+    view(2);await sleep(900);
+    for(const [ic,b,s] of PUSH){
+      push.innerHTML=`<div class="ic">${ic}</div><div><b>${b}</b><small>${s}</small></div>`;
+      push.classList.remove('out');void push.offsetWidth;push.classList.add('on');
+      await sleep(1000);
+      push.classList.add('out');push.classList.remove('on');
+      const c=document.createElement('div');c.className='ph-push';c.innerHTML=push.innerHTML;stack.appendChild(c);
+      await sleep(60);c.classList.add('on');
+      await sleep(450);
+    }
+    // последний пуш: телефон вибрирует, сцена загорается
+    box.classList.add('buzz');setTimeout(()=>box.classList.remove('buzz'),500);
+    img.style.filter='brightness(1.05)';hero.classList.add('lit');
+  })();
 })();
+
+/* 02 STEPS — кольцо карточек, логика в assets/scrollfx.js */
+const stSec=$('#steps');function updSteps(){}
 
 /* 03 DEAL — текстовая перебивка, логика в assets/scrollfx.js */
 const dSec=$('#deal');function updDeal(){}
@@ -743,18 +735,18 @@ const dSec=$('#deal');function updDeal(){}
 /* =========================================================
    04 PEOPLE — диско-шар из анкет
    ========================================================= */
-const PEOPLE=[ // ЗАГЛУШКИ: заменить на реальные анкеты с согласия участников
+const PEOPLE=[ 
   ['Алина Север','Вокал · Ведущая','sing',320,275,'Москва',['Свадьбы','Корпоративы','Джаз'],[['Джаз-сет 2×45 мин','40 000 ₽'],['Ведение + вокал','65 000 ₽']]],
   ['DJ Nova','Диджей','dj',200,250,'Москва',['Клубы','Корпоративы','House'],[['Сет 4 часа','35 000 ₽'],['Сет + свет','55 000 ₽']]],
   ['Марк Ветров','Ведущий','host',35,350,'Санкт-Петербург',['Свадьбы','Юбилеи'],[['Ведение 5 часов','60 000 ₽'],['Ведение + DJ','85 000 ₽']]],
   ['Spark Crew','Танцевальное шоу','dance',280,330,'Москва',['Шоу','Открытия'],[['Номер 7 мин','30 000 ₽'],['Шоу-программа','70 000 ₽']]],
   ['Ева Ли','Скрипка','sing',180,230,'Казань',['Фуршеты','Свадьбы'],[['Сет 3×30 мин','28 000 ₽']]],
-  ['Lumen Show','Световое шоу','band',260,300,'Москва',['Фестивали','Корпоративы'],[['Шоу 10 мин','45 000 ₽']]],
+  ['Макс Спарк','Силовое шоу','band',260,300,'Москва',['Фестивали','Корпоративы'],[['Шоу 10 мин','45 000 ₽']]],
   ['Илья Громов','Ведущий · Тамада','host',15,330,'Москва',['Юбилеи','Свадьбы'],[['Ведение 4 часа','40 000 ₽']]],
-  ['Ника Рэй','Танцор','dance',330,290,'Сочи',['Клипы','Шоу'],[['Номер','15 000 ₽']]],
+  ['Ника Рэй','Танцовщица','dance',330,290,'Сочи',['Клипы','Шоу'],[['Номер','15 000 ₽']]],
   ['Jazz Ritm','Кавер-бэнд','band',45,15,'Москва',['Свадьбы','Рестораны'],[['3 сета','90 000 ₽']]],
   ['Олег Март','Иллюзионист','host',265,240,'Екатеринбург',['Детские','Корпоративы'],[['Шоу 40 мин','25 000 ₽']]],
-  ['Мира Сон','Саксофон','sing',300,260,'Москва',['Фуршеты','Вечеринки'],[['Сет 2×40 мин','30 000 ₽']]],
+  ['Лев Мирон','Саксофон','sing',300,260,'Москва',['Фуршеты','Вечеринки'],[['Сет 2×40 мин','30 000 ₽']]],
   ['Даня Бит','Битбокс','dj',160,280,'Новосибирск',['Шоу','Фестивали'],[['Номер 10 мин','18 000 ₽']]]
 ];
 (()=>{
@@ -762,7 +754,7 @@ const PEOPLE=[ // ЗАГЛУШКИ: заменить на реальные ан�
   for(let la=-70;la<=70;la+=17.5){
     const n=Math.max(6,Math.round(Math.cos(la*Math.PI/180)*24)),w=2*Math.PI*R*Math.cos(la*Math.PI/180)/n*.88,hh=2*Math.PI*R/(360/17.5)*.86;
     for(let k=0;k<n;k++){const lo=k*360/n+(la/17.5%2?180/n:0),idx=i%PEOPLE.length;
-      h+=`<div class="tile" data-i="${idx}" style="width:${w.toFixed(1)}px;height:${hh.toFixed(1)}px;margin:${(-hh/2).toFixed(1)}px 0 0 ${(-w/2).toFixed(1)}px;background:${tileBg(i)};transform:rotateY(${lo}deg) rotateX(${la}deg) translateZ(${R}px)"></div>`;i++}
+      h+=`<div class="tile" data-i="${idx}" style="width:${w.toFixed(1)}px;height:${hh.toFixed(1)}px;margin:${(-hh/2).toFixed(1)}px 0 0 ${(-w/2).toFixed(1)}px;background:url(${phSrc(PEOPLE[idx][0])}) center 20%/cover,${tileBg(i)};transform:rotateY(${lo}deg) rotateX(${la}deg) translateZ(${R}px)"></div>`;i++}
   }
   sph.innerHTML=h;
   // блики вокруг
@@ -785,7 +777,7 @@ const PEOPLE=[ // ЗАГЛУШКИ: заменить на реальные ан�
 })();
 function openModal(i){
   const p=PEOPLE[i];
-  $('#mPh').innerHTML=photo(p[3],p[4],p[2]);$('#mName').textContent=p[0];$('#mRole').textContent=p[1]+' · '+p[5];
+  $('#mPh').innerHTML=photo(p[3],p[4],p[2],p[0]);$('#mName').textContent=p[0];$('#mRole').textContent=p[1]+' · '+p[5];
   $('#mAbout').textContent=`${p[0]}: ${p[1].toLowerCase()} с опытом более 6 лет. Работает на свадьбах, частных и корпоративных событиях. Сам подстраивает программу под гостей и формат, привозит своё оборудование.`;
   $('#mTags').innerHTML=p[6].map(t=>`<span>${t}</span>`).join('');
   $('#mSrv').innerHTML=p[7].map(s=>`<div><span>${s[0]}</span><b>${s[1]}</b></div>`).join('');
@@ -801,8 +793,8 @@ addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeChat()}});
 const iSec=$('#inside'),fis=$$('.fi'),scrs=$$('.scr'),dtabs=$$('#dtabs span');
 let curF=0;
 // picks
-$('#picks').innerHTML=[[200,250,'dj','DJ Nova','91%'],[320,275,'sing','Алина Север','96%',1],[35,350,'host','Марк Ветров','88%'],[180,230,'sing','Ева Ли','85%'],[300,260,'sing','Мира Сон','83%']]
-  .map(p=>`<div class="pick${p[5]?' mine':''}"><div class="im">${photo(p[0],p[1],p[2])}</div><div><b>${p[5]?'Это ты':p[3]}</b>${p[5]?'Совпадение '+p[4]:p[4]}</div></div>`).join('');
+$('#picks').innerHTML=[[200,250,'dj','DJ Nova','91%'],[320,275,'sing','Алина Север','96%',1],[35,350,'host','Марк Ветров','88%'],[180,230,'sing','Ева Ли','85%'],[300,260,'sing','Лев Мирон','83%']]
+  .map(p=>`<div class="pick${p[5]?' mine':''}"><div class="im">${photo(p[0],p[1],p[2],p[3])}</div><div><b>${p[5]?'Это ты':p[3]}</b>${p[5]?'Совпадение '+p[4]:p[4]}</div></div>`).join('');
 // calendar
 (()=>{const dn=['Пн','Вт','Ср','Чт','Пт','Сб','Вс'],bk={19:'Ресторан',26:'Корпоратив',31:'Новый год',12:'Юбилей'};let h=dn.map(d=>`<div class="dn">${d}</div>`).join('');
   for(let i=0;i<1;i++)h+='<div class="d e"></div>';
@@ -815,6 +807,7 @@ $('#picks').innerHTML=[[200,250,'dj','DJ Nova','91%'],[320,275,'sing','Алин�
    ========================================================= */
 (()=>{
   const net=$('#net'),svg=$('#netSvg'),cx=280,cy=260;
+  const NODE_PH=['r19','r13','r20','r23','r16','r14','r15'];
   const nodes=[['DJ',-90,215],['Вокалистка',-38,225],['Фотограф',13,215],['Танцор',64,220],['Кавер-бэнд',116,215],['Звукорежиссёр',167,225],['Ведущий',219,215]];
   let h='';
   [110,170,230].forEach(r=>h+=`<ellipse cx="${cx}" cy="${cy}" rx="${r}" ry="${r*.92}" fill="none" stroke="rgba(255,255,255,.06)" stroke-dasharray="2 6"/>`);
@@ -823,12 +816,11 @@ $('#picks').innerHTML=[[200,250,'dj','DJ Nova','91%'],[320,275,'sing','Алин�
     const mx=(x+cx)/2+Math.sin(a)*40,my=(y+cy)/2-Math.cos(a)*40,d=`M${x.toFixed(1)} ${y.toFixed(1)} Q${mx.toFixed(1)} ${my.toFixed(1)} ${cx} ${cy}`;
     h+=`<path class="ln" d="${d}"/><circle r="3.5" fill="#B3A1FF"><animateMotion dur="2.8s" begin="${i*.4}s" repeatCount="indefinite" path="${d}"/><animate attributeName="opacity" values="0;1;1;0" dur="2.8s" begin="${i*.4}s" repeatCount="indefinite"/></circle>`;
     const el=document.createElement('div');el.className='nd';el.style.left=x+'px';el.style.top=y+'px';
-    el.innerHTML=`<div class="b glass"><i></i><div>${n[0]}<small>+50% комиссии</small></div></div>`;net.appendChild(el);
+    el.innerHTML=`<div class="b glass"><i style="background:url(assets/img/${NODE_PH[i]}.jpg) center 25%/cover"></i><div>${n[0]}<small>+50% комиссии</small></div></div>`;net.appendChild(el);
   });
   svg.innerHTML=h;
   const pop=document.createElement('div');pop.className='pop50';pop.textContent='+50%';net.appendChild(pop);
   setInterval(()=>{pop.classList.remove('go');void pop.offsetWidth;pop.classList.add('go')},2800);
-  $('#copyBtn').onclick=e=>{e.target.textContent='Скопировано ✓';setTimeout(()=>e.target.textContent='Копировать',1600)};
 })();
 
 /* =========================================================
@@ -836,7 +828,7 @@ $('#picks').innerHTML=[[200,250,'dj','DJ Nova','91%'],[320,275,'sing','Алин�
    ========================================================= */
 const help=$('#help');
 help.addEventListener('click',()=>{$('#hbub').classList.remove('on');chatOpen?closeChat():openChat()});
-$('#mgrPh').innerHTML=photo(200,240,'host');$('#mgrPh2').innerHTML=photo(200,240,'host');
+$('#mgrPh').innerHTML=$('#mgrPh2').innerHTML='<img src="assets/img/manager.jpg" alt="Анастасия" style="width:100%;height:100%;object-fit:cover;display:block">';
 // приветствие менеджера всплывает через несколько секунд
 setTimeout(()=>{if(!chatOpen)$('#hbub').classList.add('on')},5000);
 $('#hbub').addEventListener('click',e=>{$('#hbub').classList.remove('on');if(!e.target.classList.contains('x'))openChat()});
@@ -877,5 +869,6 @@ function onScroll(){hdr.classList.toggle('scrolled',scrollY>20);updHero();updSte
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 </script>
+<script src="assets/interact.js"></script>
 </body>
 </html>
