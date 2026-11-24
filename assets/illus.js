@@ -5,7 +5,7 @@
    Каждая функция возвращает строку <svg>.
    ========================================================= */
 (function(){
-const C={d0:'#0E0D13',d1:'#1B1923',d2:'#272431',d3:'#38344A',face:'#DCD5EC',ln:'rgba(255,255,255,.9)',lnS:'rgba(255,255,255,.35)',a:'#8A6BFF',ah:'#B3A1FF'};
+const C={d0:'#0E0D13',d1:'#1B1923',d2:'#272431',d3:'#38344A',face:'#DCD5EC',ln:'rgba(255,255,255,.9)',lnS:'rgba(255,255,255,.35)',a:'#9C8CE0',ah:'#B3A1FF'};
 let uid=0;
 const S=`stroke="${C.ln}" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round"`;
 // искра: 4-лучевая звёздочка

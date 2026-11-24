@@ -25,7 +25,7 @@ const CSS=`
 .au-f span{display:block;font-size:12px;font-weight:600;color:var(--text-3);margin:0 0 6px 2px}
 .au-f input{width:100%;height:50px;padding:0 16px;border-radius:14px;border:1px solid var(--line-2);background:rgba(255,255,255,.035);color:var(--text);font:inherit;font-size:15px;outline:none;transition:border-color .2s,background .2s}
 .au-f input::placeholder{color:var(--text-off)}
-.au-f input:focus{border-color:var(--accent);background:rgba(138,107,255,.06)}
+.au-f input:focus{border-color:var(--accent);background:rgba(156,140,224,.06)}
 .au-f.bad input{border-color:var(--err)}
 .au-pw{position:relative}
 .au-pw button{position:absolute;right:8px;top:7px;height:36px;padding:0 10px;border-radius:10px;font-size:12px;font-weight:600;color:var(--text-3)}

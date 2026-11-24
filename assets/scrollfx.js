@@ -166,7 +166,7 @@
     const bw=ball.querySelector('img');
     for(let i=0;i<14;i++){const g=document.createElement('i');g.className='gl';const a=Math.random()*Math.PI*2,r=.3+Math.random()*.2;
       g.style.left=(50+Math.cos(a)*r*100)+'%';g.style.top=(58+Math.sin(a)*r*90)+'%';g.style.animationDelay=(-Math.random()*2.4)+'s';
-      g.innerHTML=`<svg viewBox="-10 -10 20 20" width="16" height="16"><path d="M0-9 1.6-1.6 9 0 1.6 1.6 0 9-1.6 1.6-9 0-1.6-1.6Z" fill="${i%3?'#fff':'#C6F35E'}"/></svg>`;ball.appendChild(g)}
+      g.innerHTML=`<svg viewBox="-10 -10 20 20" width="16" height="16"><path d="M0-9 1.6-1.6 9 0 1.6 1.6 0 9-1.6 1.6-9 0-1.6-1.6Z" fill="${i%3?'#fff':'#FFB088'}"/></svg>`;ball.appendChild(g)}
     const sp=fin.querySelector('.fin-spots');
     for(let i=0;i<22;i++){const s=document.createElement('i');s.style.left=Math.random()*100+'%';s.style.top=Math.random()*90+'%';
       s.style.setProperty('--dx',(Math.random()*300-150)+'px');s.style.setProperty('--dy',(Math.random()*120-60)+'px');
@@ -187,7 +187,7 @@
 
   /* ---------- 1) фон + общий цикл ---------- */
   // фон плавно перетекает: доля фиолетовых секций в окне вокруг центра экрана
-  const DARK=[7,6,10],VIO=[47,24,112];
+  const DARK=[7,6,10],VIO=[36,27,58];
   function vMix(){
     const w=innerHeight*.55,c=innerHeight*.5,a=c-w,b=c+w;let v=0;
     secs.forEach(el=>{if(el.dataset.bg!=='v')return;const r=el.getBoundingClientRect();v+=Math.max(0,Math.min(b,r.bottom)-Math.max(a,r.top))});
@@ -196,7 +196,7 @@
   function onScroll(){
     const t=vMix();
     const bgc=`rgb(${DARK.map((d,i)=>Math.round(d+(VIO[i]-d)*t)).join(',')})`;root.style.backgroundColor=bgc;root.style.setProperty('--pagebg',bgc);
-    root.classList.toggle('v',t>.5);
+    root.classList.toggle('v',t>.5);root.style.setProperty('--vm',t.toFixed(3));
     updTx();updCab();updRing();updFin();
   }
   addEventListener('scroll',onScroll,{passive:true});
