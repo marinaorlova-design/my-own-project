@@ -3,21 +3,6 @@
   const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   const fine=matchMedia('(pointer: fine)').matches;
 
-  /* 1) магнитные кнопки: тянутся к курсору, отпускают с пружиной (через translate, чтобы не мешать transform) */
-  if(fine&&!reduce){
-    document.querySelectorAll('.btn-p,.btn-m,.btn-w,.btn-g,.role').forEach(el=>{
-      const k=.08,max=4;
-      el.classList.add('mag');
-      el.addEventListener('pointermove',e=>{
-        const r=el.getBoundingClientRect();
-        const x=Math.max(-max,Math.min(max,(e.clientX-r.left-r.width/2)*k));
-        const y=Math.max(-max,Math.min(max,(e.clientY-r.top-r.height/2)*k));
-        el.style.translate=`${x.toFixed(1)}px ${y.toFixed(1)}px`;
-      });
-      el.addEventListener('pointerleave',()=>{el.style.translate='0px 0px'});
-    });
-  }
-
   /* 2) счётчики: цифры добегают до значения, когда блок появляется на экране */
   const nodes=[...document.querySelectorAll('.pp-head .acc,.ab-num b,[data-count]')]
     .filter(el=>!el.children.length&&/\d/.test(el.textContent));
@@ -65,8 +50,35 @@
     // у шара из анкет
     const ds=document.getElementById('disco');
     if(ds)for(let i=0;i<12;i++)glint(ds,()=>{const a=rnd(0,6.283),r=rnd(.2,.62);return[(50+Math.cos(a)*r*45)+'%',(50+Math.sin(a)*r*50)+'%']},{min:6,max:15,wait:4});
+    // у 3D-иконок в карточках шагов
+    document.querySelectorAll('.stc-ic').forEach(ic=>{const z=document.createElement('div');z.className='glz';ic.appendChild(z);
+      for(let i=0;i<4;i++)glint(z,()=>[rnd(10,90)+'%',rnd(10,90)+'%'],{min:8,max:16,dmin:2.8,dmax:4.6,wait:4})});
     // у шара в финале
     const fb=document.querySelector('.fin-ball');
     if(fb)for(let i=0;i<8;i++)glint(fb,()=>{const a=rnd(0,6.283),r=rnd(30,62);return[(50+Math.cos(a)*r)+'%',(60+Math.sin(a)*r*.9)+'%']},{min:6,max:14,wait:3});
   }
+
+  /* 6) плавное появление заголовков, текстов и карточек */
+  if(!reduce&&'IntersectionObserver' in window){
+    const sel='.stp-head h2,.stp-r .btn,.stc,.pp-head h2,.pp-head p,.pp-head .btn,.cab-head h2,.ref h2,.ref .lead,.r-grid>*,.ab-ph,.ab-tx h2,.ab-tx .lead,.ab-num>div,.faq h2,.faq .lead,.qa,.ft-top>*';
+    const els=[...document.querySelectorAll(sel)].filter(el=>!el.closest('.hero,.fin,.tx'));
+    const parents=new Map();
+    els.forEach(el=>{const p=el.parentElement;const k=(parents.get(p)||0);parents.set(p,k+1);el.style.setProperty('--rd',Math.min(k,6)*.09+'s');el.classList.add('mrv')});
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('mrv-in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+    els.forEach(el=>io.observe(el));
+  }
+
+  /* 7) печатная машинка для подзаголовков с атрибутом data-type */
+  const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  document.querySelectorAll('[data-type]').forEach(el=>{
+    if(reduce||el.children.length)return;
+    const txt=el.textContent;el.innerHTML='<span style="opacity:0">'+esc(txt)+'</span>';
+    const io=new IntersectionObserver(([e])=>{
+      if(!e.isIntersecting)return;io.disconnect();
+      let n=0;const step=()=>{n=Math.min(txt.length,n+2);
+        el.innerHTML=esc(txt.slice(0,n))+'<i class="tw-c"></i><span style="opacity:0">'+esc(txt.slice(n))+'</span>';
+        if(n<txt.length)setTimeout(step,22);else setTimeout(()=>{el.textContent=txt},900)};
+      setTimeout(step,250);
+    },{threshold:.6});io.observe(el);
+  });
 })();

@@ -99,7 +99,7 @@
 
   /* ---------- финал ---------- */
   .fin-in{top:30%!important;padding:0 16px}
-  .fin-in h2{font-size:48px!important;line-height:.95!important}
+  .fin-in h2{font-size:40px!important;line-height:.95!important}
   .fin-in .lead{font-size:16px!important;margin:16px auto 22px!important}
   .fin-in .cta-row{flex-direction:column;align-items:center;gap:10px}
   .fin-ball{width:150px!important;margin-left:-75px!important}
@@ -145,13 +145,15 @@
 @media (max-width:760px){.r-grid{grid-template-columns:minmax(0,1fr)!important}.ref .wrap{overflow:visible}.ref{overflow-x:clip}}
 @media (max-width:760px){.hx-box:has(.hx-team){transform:translate(-79%,-50%)!important}.hx-team{scale:.56}}
 @media (max-width:760px){
-  .stp-head{grid-template-columns:1fr;gap:14px;margin-bottom:30px}
-  .stp-head h2{font-size:40px!important}
-  .stp-sub{font-size:15px;padding-top:0}
-  .stp-cards{grid-template-columns:1fr;gap:70px;padding-top:50px}
-  .stc{min-height:0;padding:110px 22px 24px}
+  .stp-head{grid-template-columns:1fr;gap:16px;margin-bottom:20px}
+  .stp-head h2{font-size:40px!important;white-space:normal}
+  .stp-r{justify-self:start;padding-top:0}
+  .stp-sub{font-size:15px}
+  .stp-r .btn{margin-top:18px}
+  .stp-cards{grid-template-columns:1fr;gap:70px;padding-top:70px}
+  .stc{min-height:300px;padding:24px 22px 26px}
   .stc2{margin-top:0}
-  .stc-ic{width:170px;height:170px;top:-56px;right:-6px}
-  .stc-k{font-size:40px}
+  .stc-n{font-size:72px}
+  .stc-ic{width:210px;height:210px;top:-80px;right:-14px}
   .stc h3{font-size:26px}
 }
