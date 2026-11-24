@@ -6,7 +6,7 @@
 <title>MOYO — платформа индустрии событий</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=20">
+<link rel="stylesheet" href="assets/moyo.css?v=23">
 <style>
 /* главная: закулисье и зал, разрезанные по диагонали; прожектор проявляет фото */
 .home{position:relative;height:100vh;min-height:860px;overflow:hidden;background:#05040A}
@@ -18,14 +18,14 @@
 .top .mgr b{display:block;color:var(--text);font-weight:600}
 
 .hm-ph{position:absolute;inset:0;background-size:cover;transition:filter .8s var(--ease)}
-.hm-a{background-image:url(assets/img/hero-backstage.jpg);background-position:20% 30%;clip-path:inset(0 50% 0 0)}
-.hm-b{background-image:url(assets/img/hero-hall.jpg);background-position:85% 50%;clip-path:inset(0 0 0 50%)}
+.hm-a{background-image:url(assets/img/hero-hall.jpg);background-position:0% 50%;clip-path:inset(0 50% 0 0)}
+.hm-b{background-image:url(assets/img/hero-backstage.jpg);background-position:100% 35%;clip-path:inset(0 0 0 50%)}
 .home.on-l .hm-b,.home.on-r .hm-a{filter:brightness(.28) saturate(.4)}
 .home.on-l .hm-a,.home.on-r .hm-b{filter:brightness(1.15) saturate(1.1)}
 .hm-dim{position:absolute;inset:0;z-index:2;pointer-events:none;background:rgba(5,4,9,.62);-webkit-mask-image:radial-gradient(circle at var(--sx,50%) var(--sy,50%),transparent 0,transparent 170px,#000 430px);mask-image:radial-gradient(circle at var(--sx,50%) var(--sy,50%),transparent 0,transparent 170px,#000 430px)}
 .hm-shade{position:absolute;inset:0;z-index:3;pointer-events:none;background:linear-gradient(180deg,rgba(5,4,9,.75),transparent 28%,transparent 55%,rgba(5,4,9,.85))}
 .hm-seam{position:absolute;inset:0;width:100%;height:100%;z-index:4;pointer-events:none}
-.hm-seam line{stroke:rgba(214,204,255,.7);stroke-width:1.5;filter:drop-shadow(0 0 8px var(--accent))}
+.hm-seam line{stroke:rgba(220,213,242,.7);stroke-width:1.5;filter:drop-shadow(0 0 8px var(--accent))}
 .hm-seam circle{fill:var(--lime);filter:drop-shadow(0 0 10px var(--lime))}
 .home .spot{z-index:5}
 
@@ -34,15 +34,10 @@
 .hd .label{display:inline-flex;align-items:center;gap:10px;margin-top:26px;color:var(--text-2)}
 .hd .label i{width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime-glow)}
 
-.roles{position:absolute;left:0;right:0;bottom:15%;z-index:9;display:grid;grid-template-columns:1fr 1fr;pointer-events:none}
-.role{justify-self:center;pointer-events:auto;position:relative;width:168px;height:168px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;font-size:21px;font-weight:600;line-height:1.15;letter-spacing:-.02em;color:#fff;background:rgba(14,12,20,.45);border:1px solid rgba(255,255,255,.35);backdrop-filter:blur(14px);transition:background .5s var(--ease),border-color .5s,transform .6s var(--ease),box-shadow .6s}
-.role::before,.role::after{content:"";position:absolute;inset:-1px;border-radius:50%;border:1px solid rgba(198,243,94,.7);animation:rpulse 2.6s ease-out infinite;pointer-events:none}
-.role::after{animation-delay:1.3s}
-@keyframes rpulse{0%{transform:scale(1);opacity:.9}100%{transform:scale(1.45);opacity:0}}
-.role .ar{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:#10120A;font-size:18px;transition:transform .5s var(--ease)}
-.role.big{background:var(--accent);border-color:var(--accent);transform:scale(1.08);box-shadow:0 20px 70px -10px var(--accent-glow)}
-.role.big .ar{transform:rotate(-45deg)}
-.role.big::before,.role.big::after{border-color:rgba(255,255,255,.6)}
+.roles{position:absolute;left:0;right:0;bottom:12%;z-index:9;display:grid;grid-template-columns:1fr 1fr;pointer-events:none}
+.role{justify-self:center;pointer-events:auto;position:relative;display:inline-flex;align-items:center;gap:10px;height:54px;padding:0 26px 0 22px;border-radius:99px;font-size:16px;font-weight:600;letter-spacing:-.01em;color:#fff;white-space:nowrap;background:rgba(20,15,32,.5);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);transition:background .45s var(--ease),border-color .45s,transform .5s var(--ease),box-shadow .5s}
+.role::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 10px var(--lime-glow);flex:none}
+.role:hover,.role.big{background:var(--accent);border-color:var(--accent);box-shadow:0 12px 34px -16px var(--accent-glow)}
 .hm-half{position:absolute;top:0;bottom:0;width:50%;z-index:7;cursor:pointer}
 .hm-half.l{left:0}.hm-half.r{right:0}
 
@@ -65,7 +60,7 @@
   <div class="hm-ph hm-a"></div><div class="hm-ph hm-b"></div>
   <div class="hm-dim" id="hmDim"></div><div class="hm-shade"></div>
   <svg class="hm-seam" viewBox="0 0 100 100" preserveAspectRatio="none"><line x1="50" y1="0" x2="50" y2="100" vector-effect="non-scaling-stroke"/></svg>
-  <a class="hm-half l" href="ispolnitel.html" data-r="l" aria-label="Я исполнитель"></a><a class="hm-half r" href="zakazchik.html" data-r="r" aria-label="Я заказчик"></a>
+  <a class="hm-half l" href="zakazchik.html" data-r="l" aria-label="Я заказчик"></a><a class="hm-half r" href="ispolnitel.html" data-r="r" aria-label="Я исполнитель"></a>
   
   <div class="hd">
     <span class="chip"><i></i>MOYO — платформа индустрии событий</span>
@@ -73,14 +68,14 @@
   </div>
 
   <div class="roles">
-    <a class="role" href="ispolnitel.html" data-r="l">Я<br>исполнитель</a>
-    <a class="role" href="zakazchik.html" data-r="r">Я<br>заказчик</a>
+    <a class="role" href="zakazchik.html" data-r="l">Я&nbsp;заказчик</a>
+    <a class="role" href="ispolnitel.html" data-r="r">Я&nbsp;исполнитель</a>
   </div>
 </main>
 
-<script src="assets/field.js?v=20"></script>
-<script src="assets/illus.js?v=20"></script>
-<script src="assets/auth.js?v=20"></script>
+<script src="assets/field.js?v=23"></script>
+<script src="assets/illus.js?v=23"></script>
+<script src="assets/auth.js?v=23"></script>
 <script>
 const home=document.getElementById('home'),roles=[...document.querySelectorAll('.role')],dim=document.getElementById('hmDim');
 const center=el=>{const a=el.getBoundingClientRect(),b=home.getBoundingClientRect();return[a.left-b.left+a.width/2,a.top-b.top+a.height*.42]};
@@ -103,5 +98,6 @@ let lx=innerWidth/2,ly=innerHeight/2;
   requestAnimationFrame(lit);
 })();
 </script>
+<script src="assets/life.js?v=23"></script>
 </body>
 </html>

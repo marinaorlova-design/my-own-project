@@ -6,7 +6,7 @@
 <title>MOYO для исполнителей</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=20">
+<link rel="stylesheet" href="assets/moyo.css?v=23">
 <style>
 /* совместимость со старыми блоками (кабинет, FAQ, футер, чат, модалка) */
 :root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
@@ -103,11 +103,11 @@ main,footer{position:relative;z-index:2}
 .tile{position:absolute;left:0;top:0;border-radius:8px;backface-visibility:hidden;cursor:pointer;border:1px solid rgba(255,255,255,.12);transition:filter .2s,border-color .2s}
 .tile:hover{filter:brightness(1.5);border-color:var(--accent)}
 .sph-shade{position:absolute;left:50%;top:116px;width:640px;height:640px;margin-left:-320px;border-radius:50%;pointer-events:none;background:radial-gradient(circle at 36% 28%,rgba(255,255,255,.10),transparent 30%,transparent 55%,rgba(7,6,10,.65) 78%,transparent 80%)}
-.sph-glow{position:absolute;left:50%;top:436px;width:980px;height:980px;margin:-490px 0 0 -490px;border-radius:50%;background:radial-gradient(closest-side,rgba(138,107,255,.22),transparent);pointer-events:none}
+.sph-glow{position:absolute;left:50%;top:436px;width:980px;height:980px;margin:-490px 0 0 -490px;border-radius:50%;background:radial-gradient(closest-side,rgba(156,140,224,.22),transparent);pointer-events:none}
 .glint{position:absolute;width:14px;height:14px;margin:-7px;pointer-events:none;animation:glint 3s ease-in-out infinite}
 .glint svg{width:100%;height:100%}
 @keyframes glint{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
-.flare{position:absolute;width:90px;height:16px;margin:-8px -45px;border-radius:50%;background:radial-gradient(closest-side,rgba(214,204,255,.55),transparent);pointer-events:none;filter:blur(2px)}
+.flare{position:absolute;width:90px;height:16px;margin:-8px -45px;border-radius:50%;background:radial-gradient(closest-side,rgba(220,213,242,.55),transparent);pointer-events:none;filter:blur(2px)}
 .pp-foot{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:-10px;position:relative;z-index:3}
 .pp-foot .label{color:var(--text-2)}
 
@@ -226,7 +226,7 @@ main,footer{position:relative;z-index:2}
 .msg.r{background:var(--accent);border-bottom-right-radius:4px;align-self:flex-end}
 .msg small{display:block;font-size:11px;opacity:.6;margin-bottom:2px}
 .sys{align-self:center;display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-size:13px;background:rgba(255,255,255,.03);border:1px solid var(--line2);opacity:0;transform:translateY(10px)}
-.sys .ck{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(198,243,94,.15);color:var(--ok);font-size:12px}
+.sys .ck{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,176,136,.15);color:var(--ok);font-size:12px}
 .sys.lockd{border-color:rgba(185,177,255,.45);background:rgba(123,108,255,.1)}
 .sys.lockd .ck{background:var(--grad);color:#fff}
 .scr.on .chat>*{animation:up .5s cubic-bezier(.2,.8,.2,1) forwards}
@@ -236,7 +236,7 @@ main,footer{position:relative;z-index:2}
 
 .fi .prog{display:none}
 .dbar .tabs span{cursor:pointer}
-.device{box-shadow:0 40px 120px -40px rgba(138,107,255,.4)}
+.device{box-shadow:0 40px 120px -40px rgba(156,140,224,.4)}
 
 
 /* ===== 06 REF ===== */
@@ -257,7 +257,7 @@ main,footer{position:relative;z-index:2}
 .nd .b{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:99px;white-space:nowrap;font-size:13px;font-weight:600}
 .nd .b i{width:30px;height:30px;border-radius:50%;flex:none;background:linear-gradient(160deg,#3D3652,#25222F);border:1px solid var(--line-2)}
 .nd small{display:block;font-family:var(--mono);font-size:10px;font-weight:400;color:var(--accent-hi);letter-spacing:.04em}
-.core{position:absolute;left:50%;top:50%;width:132px;height:132px;margin:-66px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--accent);box-shadow:0 0 0 12px rgba(138,107,255,.12),0 0 0 28px rgba(138,107,255,.06),0 0 90px 10px var(--accent-glow)}
+.core{position:absolute;left:50%;top:50%;width:132px;height:132px;margin:-66px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--accent);box-shadow:0 0 0 12px rgba(156,140,224,.12),0 0 0 28px rgba(156,140,224,.06),0 0 90px 10px var(--accent-glow)}
 .core b{font-size:26px;font-weight:600;letter-spacing:-.03em;display:block}
 .core small{font-size:12px;opacity:.85}
 .pop50{position:absolute;left:50%;top:50%;padding:6px 10px;border-radius:99px;background:#fff;color:#0B0A10;font-weight:700;font-size:13px;opacity:0;pointer-events:none;z-index:3}
@@ -286,11 +286,11 @@ main,footer{position:relative;z-index:2}
 /* ===== 08 FINAL: сцена ===== */
 .final{position:relative;height:100vh;min-height:860px;overflow:hidden;text-align:center}
 .truss{position:absolute;left:8%;right:8%;top:70px;height:14px;border-top:1px solid rgba(255,255,255,.25);border-bottom:1px solid rgba(255,255,255,.25);background:repeating-linear-gradient(60deg,transparent 0 10px,rgba(255,255,255,.14) 10px 11px)}
-.fbeam{position:absolute;top:84px;width:420px;height:760px;margin-left:-210px;transform-origin:50% 0;clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(214,204,255,.42),rgba(138,107,255,.10) 70%,transparent);filter:blur(6px);animation:fsw 7s ease-in-out infinite}
+.fbeam{position:absolute;top:84px;width:420px;height:760px;margin-left:-210px;transform-origin:50% 0;clip-path:polygon(47% 0,53% 0,100% 100%,0 100%);background:linear-gradient(180deg,rgba(220,213,242,.42),rgba(156,140,224,.10) 70%,transparent);filter:blur(6px);animation:fsw 7s ease-in-out infinite}
 .fbeam.b1{left:22%;--r:-24deg;transform:rotate(-24deg)}.fbeam.b2{left:50%;--r:0deg;opacity:.8;animation-delay:-2s}.fbeam.b3{left:78%;--r:24deg;transform:rotate(24deg);animation-delay:-4s}
 @keyframes fsw{0%,100%{transform:rotate(var(--r))}50%{transform:rotate(calc(var(--r) * .7))}}
 .fbeam::before{content:"";position:absolute;left:50%;top:-8px;width:34px;height:18px;margin-left:-17px;border-radius:0 0 10px 10px;background:#1A1820;border:1px solid var(--line-2)}
-.stage{position:absolute;left:50%;bottom:-120px;width:1180px;height:330px;margin-left:-590px;border-radius:50%;background:radial-gradient(closest-side,rgba(138,107,255,.22),rgba(19,17,24,.95) 70%);border-top:1px solid rgba(255,255,255,.22)}
+.stage{position:absolute;left:50%;bottom:-120px;width:1180px;height:330px;margin-left:-590px;border-radius:50%;background:radial-gradient(closest-side,rgba(156,140,224,.22),rgba(19,17,24,.95) 70%);border-top:1px solid rgba(255,255,255,.22)}
 .stage::after{content:"";position:absolute;left:8%;right:8%;top:38px;height:1px;background:rgba(255,255,255,.08);border-radius:50%}
 .mic{position:absolute;left:50%;bottom:168px;width:72px;height:196px;margin-left:-36px}
 .final .in{position:relative;z-index:3;padding-top:130px}
@@ -333,7 +333,7 @@ main,footer{position:relative;z-index:2}
 .cb-alt a:hover{color:var(--text)}
 
 
-.cb-h{background:rgba(138,107,255,.12)}
+.cb-h{background:rgba(156,140,224,.12)}
 </style>
 </head>
 <body data-role="ispolnitel">
@@ -358,7 +358,7 @@ main,footer{position:relative;z-index:2}
 
 <!-- ============ 01 HERO ============ -->
 <section class="hero hx" id="hero"><div class="pin">
-  <div class="hx-bg"><div class="hx-box" data-ratio="1.7778">
+  <div class="hx-bg"><div class="hx-box" data-ratio="1.7676">
     <img class="ph" id="hxImg" src="assets/img/hero-phone.jpg" alt="Артист держит телефон у сцены">
     <div class="ph-glow"></div>
     <div class="ph-scr"><div class="ph-in" id="phIn">
@@ -505,8 +505,8 @@ main,footer{position:relative;z-index:2}
   <div class="sec-head c"><h2>Зови своих.<br><span class="acc">Зарабатывай</span> на&nbsp;их сделках</h2></div>
   <div class="r-grid">
     <div class="r-col">
-      <div class="rc glass"><span class="label">Навсегда</span><div class="v acc">50%</div><p>от&nbsp;комиссии платформы с&nbsp;каждой сделки приглашённых коллег</p></div>
-      <div class="rc glass"><span class="label">Сразу</span><div class="v">3&nbsp;000</div><p>бонусов за&nbsp;вступление. Тратишь на&nbsp;продвижение анкеты и&nbsp;функции</p></div>
+      <div class="rc glass"><span class="label">Навсегда</span><div class="v acc" data-count>50%</div><p>от&nbsp;комиссии платформы с&nbsp;каждой сделки приглашённых коллег</p></div>
+      <div class="rc glass"><span class="label">Сразу</span><div class="v" data-count>3&nbsp;000</div><p>бонусов за&nbsp;вступление. Тратишь на&nbsp;продвижение анкеты и&nbsp;функции</p></div>
     </div>
     <div class="net" id="net"><svg id="netSvg"></svg><div class="core"><div><b>Ты</b><small>твоя сеть</small></div></div></div>
     <div class="r-col">
@@ -638,10 +638,10 @@ main,footer{position:relative;z-index:2}
 
 
 
-<script src="assets/field.js?v=20"></script>
-<script src="assets/auth.js?v=20"></script>
-<script src="assets/scrollfx.js?v=20"></script>
-<script src="assets/illus.js?v=20"></script>
+<script src="assets/field.js?v=23"></script>
+<script src="assets/auth.js?v=23"></script>
+<script src="assets/scrollfx.js?v=23"></script>
+<script src="assets/illus.js?v=23"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -830,7 +830,10 @@ const help=$('#help');
 help.addEventListener('click',()=>{$('#hbub').classList.remove('on');chatOpen?closeChat():openChat()});
 $('#mgrPh').innerHTML=$('#mgrPh2').innerHTML='<img src="assets/img/manager.jpg" alt="Анастасия" style="width:100%;height:100%;object-fit:cover;display:block">';
 // приветствие менеджера всплывает через несколько секунд
-setTimeout(()=>{if(!chatOpen)$('#hbub').classList.add('on')},5000);
+// приветствие показываем один раз: через 5 с, само прячется через 9 с, повторно не всплывает
+(()=>{let seen=false;try{seen=localStorage.getItem('moyo_hb')==='1'}catch(_){}
+  if(!seen)setTimeout(()=>{if(chatOpen)return;$('#hbub').classList.add('on');try{localStorage.setItem('moyo_hb','1')}catch(_){}
+    setTimeout(()=>$('#hbub').classList.remove('on'),9000)},5000)})();
 $('#hbub').addEventListener('click',e=>{$('#hbub').classList.remove('on');if(!e.target.classList.contains('x'))openChat()});
 
 /* chat */
@@ -869,6 +872,7 @@ function onScroll(){hdr.classList.toggle('scrolled',scrollY>20);updHero();updSte
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 </script>
-<script src="assets/interact.js"></script>
+<script src="assets/interact.js?v=23"></script>
+<script src="assets/life.js?v=23"></script>
 </body>
 </html>
