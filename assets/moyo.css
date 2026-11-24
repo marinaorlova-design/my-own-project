@@ -343,9 +343,9 @@ html.v .acc{color:#D4C7FF}
 .fin-ball .gl{position:absolute;width:16px;height:16px;margin:-8px;animation:ftw 2.4s ease-in-out infinite;opacity:0}
 @keyframes ftw{0%,100%{opacity:0;transform:scale(.4) rotate(0)}50%{opacity:1;transform:scale(1) rotate(45deg)}}
 .fin-mic{position:absolute;left:50%;top:auto;bottom:11vh;height:min(22vh,200px);transform:translateX(-50%);opacity:0;z-index:13;filter:drop-shadow(0 0 14px rgba(156,140,224,.35))}
-.fin-in{position:absolute;left:0;right:0;top:35%;text-align:center;z-index:6;opacity:0;will-change:transform,opacity}
-.fin-in h2{font-size:76px;letter-spacing:-.058em;line-height:.95;text-shadow:0 10px 40px rgba(0,0,0,.6)}
-.fin-in .lead{margin:16px auto 24px;text-align:center;color:#E6E0F5}
+.fin-in{position:absolute;left:0;right:0;top:33%;text-align:center;z-index:6;opacity:0;will-change:transform,opacity}
+.fin-in h2{font-size:104px;letter-spacing:-.06em;line-height:.92;text-shadow:0 10px 40px rgba(0,0,0,.6)}
+.fin-in .lead{margin:22px auto 30px;font-size:20px;text-align:center;color:#E6E0F5}
 .fin-in .cta-row{justify-content:center}
 .cur{position:absolute;top:0;bottom:0;width:50.5%;overflow:hidden;z-index:8;will-change:transform}
 .cur.l{left:0}.cur.r{right:0}

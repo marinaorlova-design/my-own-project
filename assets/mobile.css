@@ -1,0 +1,146 @@
+/* =========================================================
+   MOYO — мобильная версия (до 760 px)
+   подключается последним на всех страницах
+   ========================================================= */
+@media (max-width:760px){
+  body{min-width:0!important;font-size:15px}
+  .wrap{width:auto!important;padding-left:16px!important;padding-right:16px!important}
+  h2{font-size:40px!important;letter-spacing:-.05em!important;line-height:.98!important}
+  .lead{font-size:16px!important}
+  .btn{height:48px;padding:0 20px;font-size:14px}
+
+  /* шапка: логотип + одна кнопка */
+  .hdr .wrap{height:60px!important;gap:12px!important;padding:0 16px!important}
+  .hdr .nav,.hdr .mgr,.hdr .ibtn,.hdr [data-auth="login"]{display:none!important}
+  .hdr .btn-s{height:38px;padding:0 14px;font-size:13px}
+  .hdr .logo img{height:17px}
+
+  /* кнопка менеджера и чат */
+  #help{right:14px!important;bottom:14px!important;height:60px!important;padding:0 8px!important;gap:0!important}
+  #help>span:last-child{max-width:0!important;opacity:0!important}
+  #help .mph{width:44px!important;height:44px!important}
+  #help .ring{left:8px!important;top:8px!important;width:44px!important;height:44px!important}
+  #help .dot-on{left:40px!important;top:40px!important}
+  .hbub{right:14px!important;bottom:86px!important;width:calc(100vw - 28px)!important;max-width:320px}
+  .chatbox{right:10px!important;left:10px!important;bottom:84px!important;width:auto!important}
+
+  /* ---------- первый экран: текст сверху, фото снизу ---------- */
+  .hero{height:auto!important;min-height:0!important}
+  .hero .pin{height:auto!important;display:flex;flex-direction:column}
+  .hx-l{position:relative!important;left:auto!important;top:auto!important;transform:none!important;width:auto!important;padding:92px 16px 0;order:1}
+  .hx-l h1{font-size:40px!important;line-height:.98}
+  .hx-l .sub{font-size:16px;margin-top:16px}
+  .hx-l .h-cta{flex-wrap:wrap;margin-top:22px;gap:10px}
+  .hx-l .h-cta .btn{flex:1 1 auto;justify-content:center}
+  .hx-l .ask,.hx-l .ai{width:100%!important}
+  .hx-bg{position:relative!important;inset:auto!important;height:560px;order:2;margin-top:-30px}
+  .hx-bg::after{background:linear-gradient(180deg,#05040A 0%,transparent 22%,transparent 80%,var(--pagebg,#07060A) 100%)!important}
+  /* на фото центрируем главное: телефон у исполнителя, шар и команду у заказчика */
+  .hx-box{transform:translate(-74.5%,-50%)!important}
+  .hx-team{scale:.62}
+
+  /* ---------- шаги ---------- */
+  .stp{padding-top:70px}
+  .stp-title{margin-bottom:30px}
+  .stp-title h2{font-size:40px!important}
+  .stp-row{grid-template-columns:1fr;gap:16px}
+  .stp-steps{grid-template-columns:1fr;gap:26px}
+  .stp-plus{grid-template-columns:1fr 1fr;gap:12px}
+  .stp-plus::before{display:none}
+  .stp .rk,.stp .rk.w,.stp .rk.d,.stp .rk.dot{height:auto!important;min-height:0}
+  .stp-steps .rk{padding:20px 20px 22px}
+  .stp-steps .rk .n{font-size:52px;margin-top:8px}
+  .stp-steps .rk .t{margin-top:14px;font-size:26px}
+  .stp-steps .rk.step:not(:last-child)::after{content:"↓";right:auto;left:50%;top:auto;bottom:-29px;margin:0 0 0 -16px}
+  .stp-plus .rk{padding:16px;height:260px!important}
+  .stp-plus .rk .bars{height:90px!important;gap:2px!important}
+  .stp-plus .rk .bars i{width:5px!important;height:5px!important}
+  .stp-plus .rk .bars span{gap:2px!important}
+  .stp-plus .rk .ring{width:104px!important;height:104px!important;margin:14px auto 0!important}
+  .stp-plus .rk .ring b{font-size:24px!important}
+  .stp-plus .rk .tx2{font-size:13px!important}
+  .stp-plus .rk .foot{flex-direction:column;align-items:flex-start;gap:8px}
+  .stp-plus .rk .foot small{text-align:left;font-size:11px}
+  .stp-cta{margin-top:28px}
+
+  /* ---------- текстовые перебивки ---------- */
+  .tx-f{width:100%!important;left:0!important;margin-left:0!important;font-size:44px!important;padding:0 16px}
+  .tx-top{top:84px;padding:0 16px;font-size:12px}
+  .tx-bar{bottom:110px}
+  .tx-cta{bottom:40px}
+
+  /* ---------- шар из анкет ---------- */
+  .people{padding-top:70px}
+  .pp-head{grid-template-columns:1fr!important;gap:14px!important;margin-bottom:0!important}
+  .pp-head h2{font-size:40px!important}
+  .pp-head p{font-size:15px}
+  .disco{height:730px;scale:.5;transform-origin:50% 0;margin:-30px 0 -365px}
+
+  /* ---------- кабинет ---------- */
+  .cab-head h2{font-size:34px!important}
+  .cab-stage{scale:.44}
+  .cab-dots{bottom:24px}
+
+  /* ---------- бонусы ---------- */
+  .ref{padding:70px 0}
+  .r-grid{grid-template-columns:1fr!important;gap:14px!important}
+  .net{width:560px!important;height:520px!important;scale:.62;margin:-90px 0 -100px 50%!important;translate:-50% 0}
+  .rc .v{font-size:38px}
+
+  /* ---------- о нас ---------- */
+  .about{padding:70px 0}
+  .ab-grid{grid-template-columns:1fr!important;gap:28px!important;padding:0!important}
+  .ab-num{gap:10px}
+
+  /* ---------- вопросы ---------- */
+  .faq .wrap{grid-template-columns:1fr!important;gap:24px!important}
+  .faq h2{font-size:40px!important}
+  .fq .fb{font-size:15px}
+
+  /* ---------- финал ---------- */
+  .fin-in{top:30%!important;padding:0 16px}
+  .fin-in h2{font-size:48px!important;line-height:.95!important}
+  .fin-in .lead{font-size:16px!important;margin:16px auto 22px!important}
+  .fin-in .cta-row{flex-direction:column;align-items:center;gap:10px}
+  .fin-ball{width:150px!important;margin-left:-75px!important}
+  .fin-hint{bottom:22px}
+
+  /* ---------- подвал ---------- */
+  .ft{padding-top:70px}
+  .ft-top{grid-template-columns:1fr!important;gap:22px!important;padding-bottom:40px!important}
+  .ft-act{flex-wrap:wrap}
+  .ft-cols{grid-template-columns:1fr 1fr!important;gap:26px!important;padding:34px 0!important}
+  .ft-mark{width:100%!important}
+  .ft-pupil{width:24px!important;height:24px!important;margin:-12px 0 0 -12px!important}
+  .ft-bot{flex-direction:column;gap:10px;align-items:flex-start}
+}
+
+/* ---------- главная: половины сверху и снизу ---------- */
+@media (max-width:760px){
+  .home{min-height:0!important;height:100svh!important}
+  .home .hm-a{inset:0 0 50% 0!important;clip-path:none!important;background-position:30% 50%!important;background-size:cover!important}
+  .home .hm-b{inset:50% 0 0 0!important;clip-path:none!important;background-position:82% 30%!important;background-size:cover!important}
+  .home .hm-seam line{display:none}
+  .home .hm-half{width:100%!important;height:50%!important;left:0!important;right:0!important}
+  .home .hm-half.l{top:0!important;bottom:auto!important}
+  .home .hm-half.r{top:auto!important;bottom:0!important}
+  .home .hd{white-space:normal!important;padding:0 16px;transform:translateY(-50%)!important}
+  .home .hd h1{font-size:40px!important}
+  .home .hd .label{display:none}
+  .home .roles{top:0!important;bottom:0!important;grid-template-columns:1fr!important;grid-template-rows:1fr 1fr!important}
+  .home .role{align-self:center}
+  .home .role[data-r="l"]{align-self:start;margin-top:22vh}
+  .home .role[data-r="r"]{align-self:end;margin-bottom:12vh}
+}
+@media (max-width:760px){
+  .top .wrap{padding:0 16px!important;height:60px}
+  .top img{height:17px}
+  .top .mgr,.top .ibtn,.top [data-auth="login"]{display:none!important}
+  .top .btn-s{height:38px;padding:0 14px;font-size:13px}
+  .home .hm-b{background-position:88% 30%!important}
+}
+@media (max-width:760px){.hdr .wrap,.top .wrap{width:100%!important;max-width:100vw;box-sizing:border-box}}
+@media (max-width:760px){.hdr,.top{width:100vw!important;max-width:100vw!important;left:0!important;right:auto!important}.hdr .wrap,.top .wrap{margin:0!important}}
+@media (max-width:760px){.r-grid>*{min-width:0!important;max-width:100%!important}.r-col{width:auto!important}.rc{width:auto!important}.rc p{white-space:normal!important}}
+@media (max-width:760px){.r-grid{grid-template-columns:minmax(0,1fr)!important}.ref .wrap{overflow:visible}.ref{overflow-x:clip}}
+@media (max-width:760px){.hx-box:has(.hx-team){transform:translate(-79%,-50%)!important}.hx-team{scale:.56}}

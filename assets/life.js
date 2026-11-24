@@ -78,8 +78,6 @@
     set();g.style.setProperty('--gw',rnd(0,o.wait||4).toFixed(2)+'s');g.addEventListener('animationiteration',set);host.appendChild(g);return g};
   if(!reduce){
     // по всему сайту — немного, в случайных местах
-    if(document.querySelector('.velvet')){const lay=document.createElement('div');lay.className='glints';document.body.appendChild(lay);
-      for(let i=0;i<7;i++)glint(lay,()=>[rnd(4,96)+'%',rnd(8,94)+'%'],{min:5,max:11,dmin:3.4,dmax:5.6,wait:8})}
     // у шара на фото первого экрана заказчика
     const hb=document.querySelector('.hx-box img[src*="hero-hall-dark"]')?.parentElement;
     if(hb){const z=document.createElement('div');z.className='glz';z.style.cssText='left:76%;top:0;width:16%;height:30%';hb.appendChild(z);

@@ -179,7 +179,7 @@
       stage.style.transform=`scale(${1.12-o*.12})`;
       const t=ease(clamp((p-.42)/.2,0,1));
       inn.style.opacity=t;inn.style.transform=`translateY(${(1-t)*30}px)`;
-      mic.style.opacity=ease(clamp((p-.3)/.2,0,1));
+      if(mic)mic.style.opacity=ease(clamp((p-.3)/.2,0,1));
       hint&&(hint.style.opacity=1-clamp(p/.08,0,1));
       fin.style.setProperty('--fin-top',1-clamp(p/.12,0,1)*.6);
     };
