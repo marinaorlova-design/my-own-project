@@ -6,7 +6,7 @@
 <title>MOYO для исполнителей</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=28">
+<link rel="stylesheet" href="assets/moyo.css?v=29">
 <style>
 /* совместимость со старыми блоками (кабинет, FAQ, футер, чат, модалка) */
 :root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent-fill);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
@@ -335,7 +335,7 @@ main,footer{position:relative;z-index:2}
 
 .cb-h{background:rgba(156,140,224,.12)}
 </style>
-<link rel="stylesheet" href="assets/mobile.css?v=28">
+<link rel="stylesheet" href="assets/mobile.css?v=29">
 </head>
 <body data-role="ispolnitel">
 <div class="bgfx" id="bgfx"></div>
@@ -390,13 +390,12 @@ main,footer{position:relative;z-index:2}
 
 <!-- ============ 02 STEPS ============ -->
 <section class="stp" id="steps"><div class="wrap flow-in">
-  <div class="stp-head"><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2><p class="stp-sub">Анкета, заказы и&nbsp;оплата в&nbsp;одном месте. Без&nbsp;посредников в&nbsp;чатах и&nbsp;просьб о&nbsp;предоплате&nbsp;— платформа берёт это на&nbsp;себя.</p></div>
+  <div class="stp-head"><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2><div class="stp-r"><p class="stp-sub" data-type>Анкета, заказы и&nbsp;оплата в&nbsp;одном месте. Без&nbsp;посредников в&nbsp;чатах и&nbsp;просьб о&nbsp;предоплате&nbsp;— платформа берёт это на&nbsp;себя.</p><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div></div>
   <div class="stp-cards">
-    <article class="stc stc1"><img class="stc-ic" src="assets/img/step-1.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 1</span><h3>Собери анкету</h3><p>Ответь на&nbsp;5 вопросов. AI оформит портфолио с&nbsp;фото, услугами и&nbsp;ценами</p></article>
-    <article class="stc stc2"><img class="stc-ic" src="assets/img/step-2.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 2</span><h3>Получай заказы</h3><p>Заказчики находят тебя через AI-поиск, а&nbsp;ты&nbsp;откликаешься на&nbsp;вакансии</p></article>
-    <article class="stc stc3"><img class="stc-ic" src="assets/img/step-3.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 3</span><h3>Получай оплату</h3><p>Заказчик платит заранее. Отработал&nbsp;— получил</p></article>
+    <article class="stc stc1"><span class="stc-n">1</span><div class="stc-ic"><img src="assets/img/ic-anketa.jpg?v=29" alt="" loading="lazy"></div><h3>Собери анкету</h3><p>Ответь на&nbsp;5 вопросов. AI оформит портфолио с&nbsp;фото, услугами и&nbsp;ценами</p></article>
+    <article class="stc stc2"><span class="stc-n">2</span><div class="stc-ic"><img src="assets/img/ic-mic.jpg?v=29" alt="" loading="lazy"></div><h3>Получай заказы</h3><p>Заказчики находят тебя через AI-поиск, а&nbsp;ты&nbsp;откликаешься на&nbsp;вакансии</p></article>
+    <article class="stc stc3"><span class="stc-n">3</span><div class="stc-ic"><img src="assets/img/ic-coins.jpg?v=29" alt="" loading="lazy"></div><h3>Получай оплату</h3><p>Заказчик платит заранее. Отработал&nbsp;— получил</p></article>
   </div>
-  <div class="stp-cta"><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div>
 </div></section>
 
 <!-- ============ 03 DEAL: текстовая перебивка ============ -->
@@ -496,23 +495,6 @@ main,footer{position:relative;z-index:2}
 
 
 
-<!-- ============ 06 REFERRAL ============ -->
-<section class="ref" id="ref"><div class="wrap flow-in">
-  <div class="sec-head c"><h2>Зови своих.<br><span class="acc">Зарабатывай</span> на&nbsp;их сделках</h2></div>
-  <div class="r-grid">
-    <div class="r-col">
-      <div class="rc glass"><span class="label">Навсегда</span><div class="v acc" data-count>50%</div><p>от&nbsp;комиссии платформы с&nbsp;каждой сделки приглашённых коллег</p></div>
-      <div class="rc glass"><span class="label">Сразу</span><div class="v" data-count>3&nbsp;000</div><p>бонусов за&nbsp;вступление. Тратишь на&nbsp;продвижение анкеты и&nbsp;функции</p></div>
-    </div>
-    <div class="net" id="net"><svg id="netSvg"></svg><div class="core"><div><b>Ты</b><small>твоя сеть</small></div></div></div>
-    <div class="r-col">
-      <div class="rc glass"><span class="label">За&nbsp;каждого</span><div class="v">+&nbsp;бонус</div><p>за&nbsp;каждого коллегу, который зарегистрировался по&nbsp;твоей ссылке</p></div>
-      <div class="rc glass"><span class="label">Без&nbsp;лимита</span><div class="v">∞</div><p>приглашай сколько хочешь&nbsp;— доход идёт с&nbsp;каждой сделки каждого коллеги</p></div>
-    </div>
-  </div>
-  <div class="cta-row"><a href="#final" data-auth="signup" class="btn btn-p">Получить свою ссылку<span class="ar">→</span></a></div>
-</div></section>
-
 <!-- ============ О НАС ============ -->
 <section class="about" id="about"><div class="wrap flow-in">
   <div class="ab-grid">
@@ -530,6 +512,23 @@ main,footer{position:relative;z-index:2}
   </div>
 </div></section>
 
+
+<!-- ============ 06 REFERRAL ============ -->
+<section class="ref" id="ref"><div class="wrap flow-in">
+  <div class="sec-head c"><h2>Зови своих.<br><span class="acc">Зарабатывай</span> на&nbsp;их сделках</h2></div>
+  <div class="r-grid">
+    <div class="r-col">
+      <div class="rc glass"><span class="label">Навсегда</span><div class="v acc" data-count>50%</div><p>от&nbsp;комиссии платформы с&nbsp;каждой сделки приглашённых коллег</p></div>
+      <div class="rc glass"><span class="label">Сразу</span><div class="v" data-count>3&nbsp;000</div><p>бонусов за&nbsp;вступление. Тратишь на&nbsp;продвижение анкеты и&nbsp;функции</p></div>
+    </div>
+    <div class="net" id="net"><svg id="netSvg"></svg><div class="core"><div><b>Ты</b><small>твоя сеть</small></div></div></div>
+    <div class="r-col">
+      <div class="rc glass"><span class="label">За&nbsp;каждого</span><div class="v">+&nbsp;бонус</div><p>за&nbsp;каждого коллегу, который зарегистрировался по&nbsp;твоей ссылке</p></div>
+      <div class="rc glass"><span class="label">Без&nbsp;лимита</span><div class="v">∞</div><p>приглашай сколько хочешь&nbsp;— доход идёт с&nbsp;каждой сделки каждого коллеги</p></div>
+    </div>
+  </div>
+  <div class="cta-row"><a href="#final" data-auth="signup" class="btn btn-p">Получить свою ссылку<span class="ar">→</span></a></div>
+</div></section>
 
 <!-- ============ 07 FAQ ============ -->
 <section class="faq sec" id="faq" data-bg="v">
@@ -623,10 +622,10 @@ main,footer{position:relative;z-index:2}
 
 
 
-<script src="assets/field.js?v=28"></script>
-<script src="assets/auth.js?v=28"></script>
-<script src="assets/scrollfx.js?v=28"></script>
-<script src="assets/illus.js?v=28"></script>
+<script src="assets/field.js?v=29"></script>
+<script src="assets/auth.js?v=29"></script>
+<script src="assets/scrollfx.js?v=29"></script>
+<script src="assets/illus.js?v=29"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -857,7 +856,7 @@ function onScroll(){hdr.classList.toggle('scrolled',scrollY>20);updHero();updSte
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 </script>
-<script src="assets/interact.js?v=28"></script>
-<script src="assets/life.js?v=28"></script>
+<script src="assets/interact.js?v=29"></script>
+<script src="assets/life.js?v=29"></script>
 </body>
 </html>
