@@ -48,26 +48,6 @@
     addEventListener('scroll',upd,{passive:true});upd();
   }
 
-  /* 4) бархат: блик ходит за курсором, цвет переливается сирень ↔ персик по горизонтали, движение «приглаживает ворс» */
-  const vel=document.querySelector('.velvet');
-  if(vel){
-    const L=[156,140,224],P=[255,176,136];
-    let tx=.5,ty=.4,x=.5,y=.4,sp=0,ts=0,lx=null,ly=null,raf=0;
-    const tick=()=>{
-      x+=(tx-x)*.08;y+=(ty-y)*.08;sp+=(ts-sp)*.06;ts*=.92;
-      const k=Math.min(1,Math.max(0,x));const c=L.map((v,i)=>Math.round(v+(P[i]-v)*k*k));
-      vel.style.setProperty('--mx',(x*100).toFixed(2)+'%');vel.style.setProperty('--my',(y*100).toFixed(2)+'%');
-      vel.style.setProperty('--vc',c.join(','));vel.style.setProperty('--vs',Math.min(1,.35+sp).toFixed(3));
-      raf=(Math.abs(tx-x)+Math.abs(ty-y)+sp>.002)?requestAnimationFrame(tick):0;
-    };
-    if(fine&&!reduce)addEventListener('pointermove',e=>{
-      tx=e.clientX/innerWidth;ty=e.clientY/innerHeight;
-      if(lx!==null)ts=Math.min(1,ts+Math.hypot(e.clientX-lx,e.clientY-ly)/400);lx=e.clientX;ly=e.clientY;
-      if(!raf)raf=requestAnimationFrame(tick);
-    },{passive:true});
-    tick();
-  }
-
   /* 5) микроблики: редкие по всему сайту и плотные у диско-шаров */
   const rnd=(a,b)=>a+Math.random()*(b-a);
   const glint=(host,place,o={})=>{

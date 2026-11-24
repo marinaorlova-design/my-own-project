@@ -505,7 +505,7 @@ html.v .acc{color:#D4C7FF}
 /* бархат: на сиреневых экранах — мягкое пятно света и лёгкое зерно; на тёмных почти не видно */
 html::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:var(--vm,0);
   background:radial-gradient(55% 45% at 50% -5%,rgba(200,188,245,.26),transparent 72%),radial-gradient(45% 40% at 88% 105%,rgba(156,140,224,.16),transparent 70%),radial-gradient(40% 35% at 6% 60%,rgba(120,100,190,.12),transparent 70%)}
-html::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:calc(.025 + var(--vm,0) * .075);mix-blend-mode:overlay;
+html::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;opacity:calc(.06 + var(--vm,0) * .05);mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.4 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E")}
 
 /* бегущая строка категорий */
@@ -533,15 +533,6 @@ html::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 .role.mag:hover{transition:background .5s var(--ease),border-color .5s,transform .6s var(--ease),box-shadow .6s,translate .3s}
 
 /* бархатный фон вместо сетки: мягкие крупные складки; блик и цвет отзываются на курсор (life.js задаёт --mx --my --vc --vs) */
-.velvet{overflow:hidden;--mx:50%;--my:40%;--vc:156,140,224;--vs:.4}
-.vv-folds{position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' preserveAspectRatio='none'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='11' /%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.92 0 0 0 1.6 -0.62'/%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") center/100% 100% no-repeat;opacity:.13;mix-blend-mode:screen}
-.vv-sheen{position:absolute;inset:0;mix-blend-mode:screen;
-  background:radial-gradient(40vw 32vw at var(--mx) var(--my),rgba(var(--vc),calc(.05 + var(--vs) * .08)),transparent 70%)}
-.vv-lit{position:absolute;inset:0;mix-blend-mode:screen;opacity:calc(.25 + var(--vs) * .55);-webkit-mask-image:radial-gradient(30vw 26vw at var(--mx) var(--my),#000,transparent 72%);mask-image:radial-gradient(30vw 26vw at var(--mx) var(--my),#000,transparent 72%)}
-.vv-lit i{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1600' height='1000' preserveAspectRatio='none'%3E%3Cfilter id='f' x='0' y='0' width='100%25' height='100%25'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='11' /%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.92 0 0 0 1.6 -0.62'/%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") center/100% 100% no-repeat;filter:grayscale(1) brightness(1.7)}
-.vv-lit::after{content:"";position:absolute;inset:0;background:rgb(var(--vc));mix-blend-mode:multiply}
-.velvet .vv-mask{display:none}
 
 /* микроблики: четырёхлучевые звёздочки */
 .glint{position:absolute;width:var(--gs,10px);height:var(--gs,10px);margin:calc(var(--gs,10px) / -2) 0 0 calc(var(--gs,10px) / -2);pointer-events:none;opacity:0;
@@ -583,3 +574,20 @@ html::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 .stp .rk.dot .foot small{color:var(--text-2)}
 .stp .rk.don .tx2 span{color:var(--text-3)}
 .stp-steps .rk.step:not(:last-child)::after{box-shadow:0 0 0 5px var(--pagebg,#07060A),0 0 18px var(--lime-glow)}
+
+/* шаги v3: заголовок слева, подзаголовок справа, три карточки лесенкой с 3D-иконкой, выходящей за край */
+.stp-head{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:start;margin-bottom:70px}
+.stp-head h2{font-size:72px;letter-spacing:-.055em;line-height:.95}
+.stp-sub{font-size:18px;line-height:1.5;color:var(--text-2);max-width:520px;padding-top:12px}
+.stp-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;align-items:start;padding-top:60px}
+.stc{position:relative;min-height:360px;padding:150px 30px 30px;border-radius:var(--r-m);background:var(--glass);border:1px solid var(--line-2);
+  backdrop-filter:blur(var(--blur));-webkit-backdrop-filter:blur(var(--blur));box-shadow:inset 0 1px 0 rgba(255,255,255,.08);transition:transform .5s var(--ease),border-color .5s var(--ease)}
+.stc2{margin-top:110px}
+.stc:hover{transform:translateY(-4px);border-color:rgba(156,140,224,.45)}
+.stc-ic{position:absolute;right:-18px;top:-70px;width:230px;height:230px;object-fit:cover;mix-blend-mode:screen;pointer-events:none;
+  -webkit-mask-image:radial-gradient(closest-side,#000 78%,transparent);mask-image:radial-gradient(closest-side,#000 78%,transparent);transition:transform .8s var(--ease)}
+.stc:hover .stc-ic{transform:rotate(-6deg) scale(1.04)}
+.stc-k{display:block;font-size:52px;font-weight:600;letter-spacing:-.05em;line-height:1;color:var(--accent)}
+.stc h3{margin-top:14px;font-size:30px;font-weight:600;letter-spacing:-.045em;line-height:1.02;color:var(--text)}
+.stc p{margin-top:12px;font-size:15px;line-height:1.45;color:var(--text-2);max-width:280px}
+.stp-cta{margin-top:56px}
