@@ -150,10 +150,10 @@
   .stp-r{justify-self:start;padding-top:0}
   .stp-sub{font-size:15px}
   .stp-r .btn{margin-top:18px}
-  .stp-cards{grid-template-columns:1fr;gap:70px;padding-top:70px}
+  .stp-cards{grid-template-columns:1fr;gap:50px;padding-top:44px}
   .stc{min-height:300px;padding:24px 22px 26px}
   .stc2{margin-top:0}
   .stc-n{font-size:72px}
-  .stc-ic{width:210px;height:210px;top:-80px;right:-14px}
+  .stc-ic{width:130px;height:130px;top:-44px;right:-4px}
   .stc h3{font-size:26px}
 }
