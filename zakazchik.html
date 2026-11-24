@@ -6,7 +6,7 @@
 <title>MOYO для заказчиков — команда на событие с гарантией</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=27">
+<link rel="stylesheet" href="assets/moyo.css?v=28">
 <style>
 /* совместимость со старыми блоками (кабинет, FAQ, футер, чат, модалка) */
 :root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent-fill);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
@@ -363,10 +363,10 @@ main,footer{position:relative;z-index:2}
 
 .cb-h{background:rgba(156,140,224,.12)}
 </style>
-<link rel="stylesheet" href="assets/mobile.css?v=27">
+<link rel="stylesheet" href="assets/mobile.css?v=28">
 </head>
 <body data-role="zakazchik">
-<div class="bgfx velvet" id="bgfx"><div class="vv-folds"></div><div class="vv-lit"><i></i></div><div class="vv-sheen"></div></div>
+<div class="bgfx" id="bgfx"></div>
 
 <header class="hdr" id="hdr"><div class="wrap">
   <a href="index.html" class="logo"><img src="assets/logo.svg" alt="MOYO"></a>
@@ -404,17 +404,11 @@ main,footer{position:relative;z-index:2}
 
 <!-- ============ 02 STEPS ============ -->
 <section class="stp" id="steps"><div class="wrap flow-in">
-  <div class="stp-title"><h2>Три шага<br>до&nbsp;<span class="acc">праздника без&nbsp;забот</span></h2></div>
-  <div class="stp-row">
-    <div class="stp-steps">
-      <div class="rk w step"><div class="rk-h"><span>Шаг 1</span><i>из&nbsp;3</i></div><div class="n">01</div><div class="t">Опиши событие</div><p>Любыми словами, как в&nbsp;мессенджере: повод, дата, гости, бюджет</p></div>
-      <div class="rk w step"><div class="rk-h"><span>Шаг 2</span><i>из&nbsp;3</i></div><div class="n">02</div><div class="t">Выбери команду</div><p>Смотри портфолио и&nbsp;общайся с&nbsp;исполнителями в&nbsp;одном чате</p></div>
-      <div class="rk w step"><div class="rk-h"><span>Шаг 3</span><i>из&nbsp;3</i></div><div class="n">03</div><div class="t">Отдыхай на&nbsp;празднике</div><p>Договор, оплату и&nbsp;форс-мажоры берём на&nbsp;себя</p></div>
-    </div>
-    <div class="stp-plus">
-      <div class="rk dot"><div class="rk-h"><span>Подбор AI</span><i>совпадение</i></div><div data-bars="3,4,4,5,6,6,7,8,8,9,10,10,11,12"></div><div class="foot"><div data-led="94"></div><small>% совпадение с&nbsp;датой, форматом и&nbsp;бюджетом</small></div></div>
-      <div class="rk d don"><div class="rk-h"><span>Безопасная сделка</span></div><div data-ring="100" data-sub="защита"></div><p class="tx2">Всё в&nbsp;договоре. <span>Споры и&nbsp;форс-мажоры решаем&nbsp;мы.</span></p></div>
-    </div>
+  <div class="stp-head"><h2>Три шага<br>до&nbsp;<span class="acc">праздника без&nbsp;забот</span></h2><p class="stp-sub">Один чат вместо десятка переписок. AI подберёт команду под дату и&nbsp;бюджет, а&nbsp;договор и&nbsp;оплату мы&nbsp;берём на&nbsp;себя.</p></div>
+  <div class="stp-cards">
+    <article class="stc stc1"><img class="stc-ic" src="assets/img/step-1.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 1</span><h3>Опиши событие</h3><p>Любыми словами, как в&nbsp;мессенджере: повод, дата, гости, бюджет</p></article>
+    <article class="stc stc2"><img class="stc-ic" src="assets/img/step-2.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 2</span><h3>Выбери команду</h3><p>Смотри портфолио и&nbsp;общайся с&nbsp;исполнителями в&nbsp;одном чате</p></article>
+    <article class="stc stc3"><img class="stc-ic" src="assets/img/step-3.jpg?v=28" alt="" loading="lazy"><span class="stc-k">Шаг 3</span><h3>Отдыхай на&nbsp;празднике</h3><p>Договор, оплату и&nbsp;форс-мажоры берём на&nbsp;себя</p></article>
   </div>
   <div class="stp-cta"><a href="#final" data-auth="signup" class="btn btn-p">Описать своё событие<span class="ar">→</span></a></div>
 </div></section>
@@ -620,10 +614,10 @@ main,footer{position:relative;z-index:2}
 
 
 
-<script src="assets/field.js?v=27"></script>
-<script src="assets/auth.js?v=27"></script>
-<script src="assets/scrollfx.js?v=27"></script>
-<script src="assets/illus.js?v=27"></script>
+<script src="assets/field.js?v=28"></script>
+<script src="assets/auth.js?v=28"></script>
+<script src="assets/scrollfx.js?v=28"></script>
+<script src="assets/illus.js?v=28"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -834,7 +828,7 @@ function onScroll(){hdr.classList.toggle('scrolled',scrollY>20);updHero();updSte
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 </script>
-<script src="assets/interact.js?v=27"></script>
-<script src="assets/life.js?v=27"></script>
+<script src="assets/interact.js?v=28"></script>
+<script src="assets/life.js?v=28"></script>
 </body>
 </html>
