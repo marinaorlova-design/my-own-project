@@ -6,10 +6,10 @@
 <title>MOYO для исполнителей</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/moyo.css?v=25">
+<link rel="stylesheet" href="assets/moyo.css?v=26">
 <style>
 /* совместимость со старыми блоками (кабинет, FAQ, футер, чат, модалка) */
-:root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
+:root{--card:#131118;--card2:#1A1820;--mut:var(--text-2);--mut2:var(--text-3);--line2:var(--line-2);--grad:var(--accent-fill);--disp:var(--sans);--body:var(--sans);--m:var(--accent)}
 h1,h2,h3{font-weight:600;letter-spacing:-.04em;line-height:1.04}
 .lead{font-size:18px;color:var(--text-2);max-width:560px}
 .eyebrow{display:inline-flex;align-items:center;gap:8px;height:32px;padding:0 14px;border-radius:var(--r-pill);font-size:13px;font-weight:500;color:var(--text-2);border:1px solid var(--line-2);background:var(--glass);backdrop-filter:blur(var(--blur))}
@@ -52,7 +52,7 @@ main,footer{position:relative;z-index:2}
 .plate p b{color:var(--text);font-weight:600}
 .plate .n{font-size:44px;font-weight:600;letter-spacing:-.05em;line-height:1;margin-bottom:6px}
 .h-toast{display:flex;gap:12px;align-items:center;padding:12px 16px 12px 12px;border-radius:16px;font-size:13px}
-.h-toast .av{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--accent);flex:none;font-size:14px}
+.h-toast .av{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--accent-fill);flex:none;font-size:14px}
 .h-toast b{display:block;font-size:13px;font-weight:600}
 .h-toast small{color:var(--text-2);font-size:12px}
 .pop{opacity:0;transform:translateY(12px) scale(.97);transition:opacity .6s var(--ease),transform .6s var(--ease)}
@@ -142,7 +142,7 @@ main,footer{position:relative;z-index:2}
 .fi{position:relative;height:46px;padding:0 22px;border-radius:var(--r-pill);font-size:15px;font-weight:600;color:var(--text-2);overflow:hidden;transition:background .4s,color .4s}
 .fi:hover{color:var(--text)}
 .fi.on{background:var(--accent-a12);color:var(--text);box-shadow:inset 0 0 0 1px var(--accent-a30)}
-.fi .prog{position:absolute;left:18px;bottom:0;max-width:calc(100% - 36px);height:2px;width:0;background:var(--accent)}
+.fi .prog{position:absolute;left:18px;bottom:0;max-width:calc(100% - 36px);height:2px;width:0;background:var(--accent-fill)}
 .fi.on .prog{animation:fprog 9s linear forwards}
 .flist.stop .fi.on .prog{animation:none;width:0}
 @keyframes fprog{to{width:calc(100% - 36px)}}
@@ -223,7 +223,7 @@ main,footer{position:relative;z-index:2}
 .chat{display:flex;flex-direction:column;gap:10px}
 .msg{max-width:70%;padding:12px 16px;border-radius:16px;font-size:14px;opacity:0;transform:translateY(10px)}
 .msg.l{background:rgba(255,255,255,.06);border-bottom-left-radius:4px;align-self:flex-start}
-.msg.r{background:var(--accent);border-bottom-right-radius:4px;align-self:flex-end}
+.msg.r{background:var(--accent-fill);border-bottom-right-radius:4px;align-self:flex-end}
 .msg small{display:block;font-size:11px;opacity:.6;margin-bottom:2px}
 .sys{align-self:center;display:flex;align-items:center;gap:10px;padding:12px 18px;border-radius:14px;font-size:13px;background:rgba(255,255,255,.03);border:1px solid var(--line2);opacity:0;transform:translateY(10px)}
 .sys .ck{width:22px;height:22px;border-radius:50%;display:grid;place-items:center;background:rgba(255,176,136,.15);color:var(--ok);font-size:12px}
@@ -257,7 +257,7 @@ main,footer{position:relative;z-index:2}
 .nd .b{position:absolute;transform:translate(-50%,-50%);display:flex;align-items:center;gap:10px;padding:6px 14px 6px 6px;border-radius:99px;white-space:nowrap;font-size:13px;font-weight:600}
 .nd .b i{width:30px;height:30px;border-radius:50%;flex:none;background:linear-gradient(160deg,#3D3652,#25222F);border:1px solid var(--line-2)}
 .nd small{display:block;font-family:var(--mono);font-size:10px;font-weight:400;color:var(--accent-hi);letter-spacing:.04em}
-.core{position:absolute;left:50%;top:50%;width:132px;height:132px;margin:-66px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--accent);box-shadow:0 0 0 12px rgba(156,140,224,.12),0 0 0 28px rgba(156,140,224,.06),0 0 90px 10px var(--accent-glow)}
+.core{position:absolute;left:50%;top:50%;width:132px;height:132px;margin:-66px;border-radius:50%;display:grid;place-items:center;text-align:center;background:var(--accent-fill);box-shadow:0 0 0 12px rgba(156,140,224,.12),0 0 0 28px rgba(156,140,224,.06),0 0 90px 10px var(--accent-glow)}
 .core b{font-size:26px;font-weight:600;letter-spacing:-.03em;display:block}
 .core small{font-size:12px;opacity:.85}
 .pop50{position:absolute;left:50%;top:50%;padding:6px 10px;border-radius:99px;background:#fff;color:#0B0A10;font-weight:700;font-size:13px;opacity:0;pointer-events:none;z-index:3}
@@ -299,8 +299,8 @@ main,footer{position:relative;z-index:2}
 .final .cta-row{justify-content:center}
 
 /* ===== HELPER WIDGET ===== */
-.help{position:fixed;right:28px;bottom:28px;z-index:55;display:flex;align-items:center;gap:14px;height:76px;padding:0 26px 0 10px;border-radius:99px;background:var(--accent);color:#fff;box-shadow:0 18px 50px -12px var(--accent-glow),0 0 0 1px rgba(255,255,255,.18) inset;font-size:15px;font-weight:700;text-align:left;transition:transform .3s,background .3s}
-.help:hover{transform:translateY(-3px);background:var(--accent-hi)}
+.help{position:fixed;right:28px;bottom:28px;z-index:55;display:flex;align-items:center;gap:14px;height:76px;padding:0 26px 0 10px;border-radius:99px;background:var(--accent-fill);color:#fff;box-shadow:0 18px 50px -12px var(--accent-glow),0 0 0 1px rgba(255,255,255,.18) inset;font-size:15px;font-weight:700;text-align:left;transition:transform .3s,background .3s}
+.help:hover{transform:translateY(-3px);background:var(--accent-fill-hi)}
 .help small{display:block;font-size:12px;font-weight:500;color:rgba(255,255,255,.8)}
 .help .mph{position:relative;width:56px;height:56px;border-radius:50%;flex:none;overflow:hidden;border:2px solid #fff;background:#2A2734}
 .help .mph svg{width:100%;height:100%;display:block}
@@ -320,7 +320,7 @@ main,footer{position:relative;z-index:2}
 .cb-h .x{margin-left:auto;font-size:20px;color:var(--mut)}
 .cb-b{padding:18px 20px;display:flex;flex-direction:column;gap:10px;height:280px;overflow-y:auto}
 .cb-b .m{max-width:85%;padding:10px 14px;border-radius:14px;font-size:14px;background:rgba(255,255,255,.06);border-bottom-left-radius:4px}
-.cb-b .m.u{align-self:flex-end;background:var(--accent);border-bottom-left-radius:14px;border-bottom-right-radius:4px}
+.cb-b .m.u{align-self:flex-end;background:var(--accent-fill);border-bottom-left-radius:14px;border-bottom-right-radius:4px}
 .qq{display:flex;flex-wrap:wrap;gap:6px}
 .qq button{font-size:12px;padding:7px 11px;border-radius:99px;border:1px solid var(--line2);color:#D9D5E8}
 .qq button:hover{background:rgba(255,255,255,.06)}
@@ -388,20 +388,21 @@ main,footer{position:relative;z-index:2}
 </div></section>
 
 <!-- ============ 02 STEPS ============ -->
-<section class="rgs" id="steps">
-  <div class="pin">
-    <div class="rgs-title"><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2></div>
-    <div class="rgs-stage"><div class="rg">
+<section class="stp" id="steps"><div class="wrap flow-in">
+  <div class="stp-title"><h2>Три шага<br>до&nbsp;<span class="acc">первого гонорара</span></h2></div>
+  <div class="stp-row">
+    <div class="stp-steps">
       <div class="rk w step"><div class="rk-h"><span>Шаг 1</span><i>из&nbsp;3</i></div><div class="n">01</div><div class="t">Собери анкету</div><p>Ответь на&nbsp;5 вопросов. AI оформит портфолио с&nbsp;фото, услугами и&nbsp;ценами</p></div>
-      <div class="rk dot"><div class="rk-h"><span>AI-анкета</span><i>время</i></div><div data-bars="2,3,3,4,4,5,6,6,7,8,8,9,10,11"></div><div class="foot"><div data-led="2"></div><small>минуты на&nbsp;анкету. Без дизайнера и&nbsp;копирайтера</small></div></div>
       <div class="rk w step"><div class="rk-h"><span>Шаг 2</span><i>из&nbsp;3</i></div><div class="n">02</div><div class="t">Получай заказы</div><p>Заказчики находят тебя через AI-поиск, а&nbsp;ты&nbsp;откликаешься на&nbsp;вакансии</p></div>
       <div class="rk w step"><div class="rk-h"><span>Шаг 3</span><i>из&nbsp;3</i></div><div class="n">03</div><div class="t">Получай оплату</div><p>Заказчик платит заранее. Отработал&nbsp;— получил</p></div>
+    </div>
+    <div class="stp-plus">
+      <div class="rk dot"><div class="rk-h"><span>AI-анкета</span><i>время</i></div><div data-bars="2,3,3,4,4,5,6,6,7,8,8,9,10,11"></div><div class="foot"><div data-led="2"></div><small>минуты на&nbsp;анкету. Без дизайнера и&nbsp;копирайтера</small></div></div>
       <div class="rk d don"><div class="rk-h"><span>Гарантия</span></div><div data-ring="100" data-sub="оплаты"></div><p class="tx2">Оплата по&nbsp;договору. <span>Без просьб о&nbsp;предоплате.</span></p></div>
-    </div></div>
-    <div class="rgs-hint">Потяни, чтобы покрутить&nbsp;↔</div>
-    <div class="rgs-cta"><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div>
+    </div>
   </div>
-</section>
+  <div class="stp-cta"><a href="#final" data-auth="signup" class="btn btn-p">Начать с&nbsp;анкеты<span class="ar">→</span></a></div>
+</div></section>
 
 <!-- ============ 03 DEAL: текстовая перебивка ============ -->
 <section class="tx" id="deal" data-bg="v" style="height:450vh">
@@ -628,10 +629,10 @@ main,footer{position:relative;z-index:2}
 
 
 
-<script src="assets/field.js?v=25"></script>
-<script src="assets/auth.js?v=25"></script>
-<script src="assets/scrollfx.js?v=25"></script>
-<script src="assets/illus.js?v=25"></script>
+<script src="assets/field.js?v=26"></script>
+<script src="assets/auth.js?v=26"></script>
+<script src="assets/scrollfx.js?v=26"></script>
+<script src="assets/illus.js?v=26"></script>
 <script>
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const REDUCE=matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -854,7 +855,7 @@ function updFlow(){
     el.style.transform=`translateY(${(1-en)*50}px) scale(${.96+.04*ex})`;
   });
   // уходящие закреплённые сцены тоже растворяются
-  [['#steps .pin',stSec],['#deal .pin',dSec]].forEach(([s,sec])=>{const r=sec.getBoundingClientRect(),ex=clamp((r.bottom-vh*.1)/(vh*.6),0,1),en=clamp((vh-r.top)/(vh*.6),0,1),v=Math.min(en,ex);$(s).style.opacity=v});
+  [['#steps .pin',stSec],['#deal .pin',dSec]].forEach(([s,sec])=>{if(!sec||!document.querySelector(s))return;const r=sec.getBoundingClientRect(),ex=clamp((r.bottom-vh*.1)/(vh*.6),0,1),en=clamp((vh-r.top)/(vh*.6),0,1),v=Math.min(en,ex);$(s).style.opacity=v});
 }
 
 /* ---------- цикл ---------- */
@@ -862,7 +863,7 @@ function onScroll(){hdr.classList.toggle('scrolled',scrollY>20);updHero();updSte
 addEventListener('scroll',onScroll,{passive:true});addEventListener('resize',onScroll);
 onScroll();
 </script>
-<script src="assets/interact.js?v=25"></script>
-<script src="assets/life.js?v=25"></script>
+<script src="assets/interact.js?v=26"></script>
+<script src="assets/life.js?v=26"></script>
 </body>
 </html>
