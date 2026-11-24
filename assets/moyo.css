@@ -531,3 +531,23 @@ html::after{content:"";position:fixed;inset:0;z-index:200;pointer-events:none;op
 @media (prefers-reduced-motion: reduce){.mq-t{animation:none}}
 .role.mag{transition:background .5s var(--ease),border-color .5s,transform .6s var(--ease),box-shadow .6s,translate .45s var(--ease)}
 .role.mag:hover{transition:background .5s var(--ease),border-color .5s,transform .6s var(--ease),box-shadow .6s,translate .3s}
+
+/* бархатный фон вместо сетки: мягкие крупные складки; блик и цвет отзываются на курсор (life.js задаёт --mx --my --vc --vs) */
+.velvet{overflow:hidden;--mx:50%;--my:40%;--vc:156,140,224;--vs:.4}
+.vv-folds{position:absolute;left:-30%;top:-30%;width:160%;height:160%;
+  background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.92 0 0 0 1.6 -0.62'/%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") 0 0/900px 900px;opacity:.13;mix-blend-mode:screen}
+.vv-sheen{position:absolute;inset:0;mix-blend-mode:screen;
+  background:radial-gradient(40vw 32vw at var(--mx) var(--my),rgba(var(--vc),calc(.05 + var(--vs) * .08)),transparent 70%)}
+.vv-lit{position:absolute;inset:0;mix-blend-mode:screen;opacity:calc(.25 + var(--vs) * .55);-webkit-mask-image:radial-gradient(30vw 26vw at var(--mx) var(--my),#000,transparent 72%);mask-image:radial-gradient(30vw 26vw at var(--mx) var(--my),#000,transparent 72%)}
+.vv-lit i{position:absolute;left:-30%;top:-30%;width:160%;height:160%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900'%3E%3Cfilter id='f'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.0045' numOctaves='3' seed='11' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.66 0 0 0 0 0.58 0 0 0 0 0.92 0 0 0 1.6 -0.62'/%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23f)'/%3E%3C/svg%3E") 0 0/900px 900px;filter:grayscale(1) brightness(1.7)}
+.vv-lit::after{content:"";position:absolute;inset:0;background:rgb(var(--vc));mix-blend-mode:multiply}
+.velvet .vv-mask{display:none}
+
+/* микроблики: четырёхлучевые звёздочки */
+.glint{position:absolute;width:var(--gs,10px);height:var(--gs,10px);margin:calc(var(--gs,10px) / -2) 0 0 calc(var(--gs,10px) / -2);pointer-events:none;opacity:0;
+  background:radial-gradient(circle,#fff 0 12%,transparent 30%),linear-gradient(90deg,transparent 0 46%,rgba(255,255,255,.95) 50%,transparent 54% 100%),linear-gradient(0deg,transparent 0 46%,rgba(255,255,255,.95) 50%,transparent 54% 100%);
+  filter:drop-shadow(0 0 3px rgba(var(--gc,232,227,247),.9));animation:glint var(--gd,3.2s) ease-in-out var(--gw,0s) infinite}
+@keyframes glint{0%,100%{opacity:0;transform:scale(.2) rotate(0)}45%{opacity:var(--go,.9);transform:scale(1) rotate(30deg)}60%{opacity:0;transform:scale(.3) rotate(45deg)}}
+.glints{position:fixed;inset:0;z-index:3;pointer-events:none;overflow:hidden}
+.glz{position:absolute;pointer-events:none;z-index:4}
+@media (prefers-reduced-motion: reduce){.glint{animation:none}}
