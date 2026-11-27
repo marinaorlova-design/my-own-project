@@ -63,14 +63,14 @@
       const r=cab.getBoundingClientRect(),p=clamp(-r.top/(r.height-innerHeight),0,1),vh=innerHeight;
       // заголовок сначала по центру, затем уходит наверх и уменьшается
       const tt=ease(clamp((p-.03)/.12,0,1)),hh=head.offsetHeight;
-      head.style.transform=`translateY(${(vh-hh)*.3*(1-tt)+84*tt}px) scale(${1-tt*.52})`;
+      const mob=innerWidth<761;head.style.transform=`translateY(${(vh-hh)*.3*(1-tt)+(mob?72:84)*tt}px) scale(${1-tt*(mob?.14:.52)})`;
       let act=-1;
       cc.forEach((c,i)=>{
         const e=clamp((p-A(i))/D,0,1),k=ease(e),f=ease(clamp((e-.2)/.8,0,1));
         const l=i<N-1?ease(clamp((p-A(i+1))/D,0,1)):0,gone=i<N-2?clamp((p-A(i+2))/D,0,1):0;
         const side=i%2?1:-1;
         const o=e<=0?0:Math.min(1,e*4)*(1-l*.7)*(1-gone);c.style.setProperty('--o',o);c.style.visibility=o>0?'visible':'hidden';
-        c.style.transform=`translateY(${(1-k)*vh*.85-l*70}px) translateZ(${-l*260}px) rotateX(${(1-k)*22}deg) rotateZ(${(1-k)*7*side}deg) rotateY(${(1-f)*180*side}deg)`;
+        c.style.transform=`translateY(${(1-k)*vh*.85-l*(innerWidth<761?26:70)}px) translateZ(${-l*260}px) rotateX(${(1-k)*22}deg) rotateZ(${(1-k)*7*side}deg) rotateY(${(1-f)*180*side}deg)`;
         if(e>.5)act=i;
         // лицо открылось — запускаем анимацию экрана внутри
         const on=f>.92&&l<.5?1:0;

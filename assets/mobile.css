@@ -77,8 +77,7 @@
   .disco{height:730px;scale:.5;transform-origin:50% 0;margin:-30px 0 -365px}
 
   /* ---------- кабинет ---------- */
-  .cab-head h2{font-size:34px!important}
-  .cab-stage{scale:.44}
+  .cab-head h2{font-size:38px!important;padding:0 16px}
   .cab-dots{bottom:24px}
 
   /* ---------- бонусы ---------- */
@@ -156,4 +155,63 @@
   .stc-n{font-size:72px}
   .stc-ic{width:130px;height:130px;top:-44px;right:-4px}
   .stc h3{font-size:26px}
+}
+/* кабинет на телефоне: заголовок чуть уменьшается, карточки почти на весь экран, крупный текст */
+@media (max-width:760px){
+  .cab-stage{left:16px;right:16px;width:auto;margin:0;top:auto;bottom:52px;height:calc(100svh - 292px);min-height:420px}
+  .cab-dots{bottom:22px}
+  .cab .cc-front{border-radius:22px}
+  .cab .cc-front .dbar{height:48px;padding:0 16px;gap:10px}
+  .cab .cc-front .cc-t{font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0}
+  .cab .cc-front .dbar .label{white-space:nowrap;flex:none}
+  .cab .cc-back{padding:26px 24px}
+  .cab .cc-back b{font-size:40px}
+  .cab .cc-back::before{width:360px;height:360px;right:-110px;bottom:-120px;border-width:34px}
+  .cab .scr{top:48px;padding:18px 16px}
+  .cab .scr h4{font-size:22px;letter-spacing:-.02em}
+  .cab .scr .sub{font-size:14px;margin-bottom:14px}
+  .cab .chips{flex-wrap:nowrap;gap:5px;margin-bottom:14px;overflow:hidden}
+  .cab .chips span{font-size:12px;padding:6px 9px;white-space:nowrap;flex:none}
+  .cab .chips.pf-f{overflow-x:auto;scrollbar-width:none;margin-right:-16px;padding-right:16px}
+  .cab .chips.pf-f::-webkit-scrollbar{display:none}
+  .cab .cursor{display:none}
+  /* вакансии: название сверху, цена и кнопка строкой ниже */
+  .cab .cc-front .vac{grid-template-columns:48px 1fr auto;gap:10px 12px;padding:12px;margin-bottom:8px}
+  .cab .cc-front .vac .vth{width:48px;height:48px;grid-row:1}
+  .cab .cc-front .vac>div{grid-column:2/-1}
+  .cab .vac b{font-size:15px;line-height:1.25}
+  .cab .vac small{font-size:12.5px}
+  .cab .vac .pr{grid-column:1/3;grid-row:2;font-size:16px}
+  .cab .vac .go{grid-column:3;grid-row:2;min-width:150px;height:36px;padding:0 14px;white-space:nowrap}
+  .cab .vac:nth-child(n+3){display:none}
+  /* запрос и подбор */
+  .cab .req{max-width:none;font-size:14.5px;line-height:1.35;padding:12px 14px;margin-bottom:10px}
+  .cab .ai-line{font-size:13px;margin-bottom:10px;line-height:1.3}
+  .cab .picks{gap:8px;overflow:hidden}
+  .cab .pick{flex:0 0 calc((100% - 16px) / 3);width:auto}
+  .cab .pick .im{height:84px}
+  .cab .pick div{font-size:12px;padding:7px 8px}
+  .cab .invite{left:12px;right:12px;bottom:12px;width:auto;padding:14px}
+  .cab .invite .bt{margin-top:10px}
+  .cab .invite .bt span{padding:8px}
+  .cab .invite small{font-size:12.5px}
+  .cab .invite b{font-size:16px}
+  /* календарь: сетка и одно ближайшее событие */
+  .cab .cal{grid-template-columns:1fr;gap:14px}
+  .cab .cgrid{gap:4px}
+  .cab .cgrid .d{height:40px;padding:4px 5px;font-size:12px;border-radius:8px}
+  .cab .cgrid .d.b em{display:none}
+  .cab .upc div:nth-child(n+3){display:none}
+  .cab .upc div{font-size:13.5px}
+  /* чат */
+  .cab .chat{gap:8px}
+  .cab .msg{max-width:88%;font-size:14.5px;line-height:1.4;padding:11px 14px}
+  .cab .sys{font-size:12.5px;padding:10px 12px;align-self:stretch}
+  .cab .ch2{grid-template-columns:1fr}
+  .cab .chl{display:none}
+  /* анкеты: 2 колонки */
+  .cab .pf-grid{grid-template-columns:1fr 1fr;gap:8px;max-height:calc(100% - 150px);overflow:hidden}
+  .cab .pf .im{height:104px}
+  .cab .pf div.t{font-size:12px}
+  .cab .pf div.t b{font-size:14px}
 }
